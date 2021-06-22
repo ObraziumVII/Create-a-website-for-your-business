@@ -7,6 +7,7 @@ const MongoStore = require('connect-mongo');
 const cookieP = require('cookie-parser');
 const { connect } = require('./db/models/connect');
 const dotenv = require('dotenv').config();
+const { sessionMiddle, isAdmin } = require('./middleware/middleware');
 
 const app = express();
 
