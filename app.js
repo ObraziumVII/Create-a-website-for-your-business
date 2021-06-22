@@ -1,16 +1,16 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
-
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-
+// const cookieP = require('cookie-parser');
 const { connect } = require('./db/models/connect');
-const dotenv = require('dotenv').config();
 const { sessionMiddle, isAdmin } = require('./middleware/middleware');
 
-const loginRouter = require('./routes/admin/login');
-const requestsRouter = require('./routes/admin/requests');
+const indexRouter = require('./routes/index');
+const adminRouter = require('./routes/admin');
+
 
 const app = express();
 
@@ -20,6 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
+app.use(morgan('dev'));
 
 const sessionConfig = {
   secret: 'keyboard cat',
@@ -37,10 +38,12 @@ app.use(session(sessionConfig));
 //   next(error);
 // });
 
-app.use('/admin', loginRouter);
-app.use('/admin', requestsRouter);
+app.use('/admin', adminRouter);
 
-app.use(morgan('dev'));
+app.use('/', indexRouter);
+// app.get('/', (req, res) => {
+//   res.send('200');
+// });
 
 app.listen(process.env.PORT, () => {
   console.log('Подключение прошло успешно');
