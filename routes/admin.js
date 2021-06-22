@@ -1,13 +1,28 @@
 const express = require('express');
-const adminSignup = require('../controllers/admin');
+const { adminLogin, adminSignup } = require('../controllers/admin');
 
 const router = express.Router();
 
-router.get('signup', (req, res) => {
+router.get('/login', (req, res) => {
+  res.render('login');
+});
+
+router.post('/login', adminLogin);
+
+router.get('/logout', (req, res) => {
+  req.session.destroy();
+  res.cookie('Cookie111', '00', { expires: new Date() });
+  res.redirect('/');
+});
+
+router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
 router.post('/signup', adminSignup);
 
-module.exports = router;
+router.get('/requests', (req, res) => {
+  res.render('requests');
+});
 
+module.exports = router;

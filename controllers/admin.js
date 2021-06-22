@@ -9,13 +9,26 @@ const adminSignup = async (req, res) => {
       const pwd = await bcrypt.hash(password, 10);
       const admin = await Admin.create({ name, email, password: pwd });
       req.session.admin_id = admin._id;
+      res.locals.admin = true;
       res.redirect('/admin/requests');
     }
   } catch (err) {
     res.render(res.render('error'), {
-      errorMessage: 'Данные введене неверно',
+      errorMessage: 'Данные введены неверно',
     });
   }
 };
 
-module.exports = { adminSignup };
+const adminLogin = async (req, res) => {
+  const { name, password } = req.body;
+  const admin = await Admin.findOne({ name });
+  const validPassword = await bcrypt.compare(password, admin.password);
+  if (validPassword) {
+    req.session.admin_id = admin._id;
+    res.locals.admin = true;
+    res.redirect('/admin/requests');
+  }
+  res.ok(false); // if we want to login with fetch, we can check if response.ok
+};
+
+module.exports = { adminLogin, adminSignup };

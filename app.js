@@ -1,12 +1,14 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const { connect } = require('./db/models/connect');
-const dotenv = require('dotenv').config();
-const adminRouter = require('./routes/admin');
 // const { sessionMiddle, isAdmin } = require('./middleware/middleware');
+
+const indexRouter = require('./routes/index');
+const adminRouter = require('./routes/admin');
 
 const app = express();
 
@@ -21,6 +23,7 @@ const sessionConfig = {
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
+  name: 'Cookie111',
   cookie: { secure: false },
   store: MongoStore.create({ mongoUrl: process.env.DB }), // ?????
 };
@@ -29,14 +32,13 @@ app.use(session(sessionConfig));
 app.use(morgan('dev'));
 // app.use(sessionMiddle);
 
+app.use('/', indexRouter);
 app.use('/admin', adminRouter);
 
-// app.use('/admin', )
-
-app.use((req, res, next) => {
-  const error = createError(404, 'Запрашиваемой страницы не существует на сервере.');
-  next(error);
-});
+// app.use((req, res, next) => {
+//   const error = createError(404, 'Запрашиваемой страницы не существует на сервере.');
+//   next(error);
+// });
 
 app.use((err, req, res, next) => {
   const appMode = req.app.get('env');

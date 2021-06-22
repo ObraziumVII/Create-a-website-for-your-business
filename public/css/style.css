@@ -1,0 +1,79 @@
+#body {
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.mvp {
+  position: absolute;
+width: 401px;
+height: 268px;
+left: 168px;
+top: 157px;
+font-family: RF Rostin;
+font-style: normal;
+font-weight: bold;
+font-size: 60px;
+line-height: 112%;
+letter-spacing: -0.04em;
+text-transform: uppercase;
+color: #4520AB;
+
+}
+
+.product {
+  position: absolute;
+  width: 877px;
+  height: 114px;
+  left: 213px;
+  top: 631px;
+  
+  font-family: RF Rostin;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 188%;
+ 
+  letter-spacing: -0.04em;
+  
+  color: #4520AB;
+ 
+
+/* width: 982px;
+height: 169px;
+left: 172px;
+top: 605px; */
+
+background: #ECECEC;
+border-radius: 17px;
+}
+
+.btnmvp {
+  position: absolute;
+  width: 247px;
+  height: 51px;
+  left: 172px;
+  top: 463px;
+  background: #FFBC5B;
+  box-shadow: 0px 7px 29px rgba(255, 188, 91, 0.37);
+  border-radius: 30px;
+}
+
+.footer {
+  /* position: absolute; */
+  display: flex;
+/* flex-direction: column; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
+}
+
+.footer {
+  background-color: #4520ab;
+  padding-bottom: 100px;
+}
+
+.circle {
+  
+}
