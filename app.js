@@ -1,13 +1,16 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
-const path = require('path');
+
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-const cookieP = require('cookie-parser');
+
 const { connect } = require('./db/models/connect');
 const dotenv = require('dotenv').config();
 const { sessionMiddle, isAdmin } = require('./middleware/middleware');
+
+const loginRouter = require('./routes/admin/login');
+const requestsRouter = require('./routes/admin/requests');
 
 const app = express();
 
@@ -27,16 +30,19 @@ const sessionConfig = {
 };
 
 app.use(session(sessionConfig));
-app.use(sessionMiddle);
+// app.use(sessionMiddle);
 
-app.use((req, res, next) => {
-  const error = createError(404, 'Запрашиваемой страницы не существует на сервере.');
-  next(error);
-});
+// app.use((req, res, next) => {
+//   const error = createError(404, 'Запрашиваемой страницы не существует на сервере.');
+//   next(error);
+// });
+
+app.use('/admin', loginRouter);
+app.use('/admin', requestsRouter);
 
 app.use(morgan('dev'));
 
 app.listen(process.env.PORT, () => {
   console.log('Подключение прошло успешно');
-  connect.connect();
-})
+  connect();
+});
