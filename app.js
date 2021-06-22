@@ -1,13 +1,12 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
-const path = require('path');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-const cookieP = require('cookie-parser');
 const { connect } = require('./db/models/connect');
 const dotenv = require('dotenv').config();
-const { sessionMiddle, isAdmin } = require('./middleware/middleware');
+const adminRouter = require('./routes/admin');
+// const { sessionMiddle, isAdmin } = require('./middleware/middleware');
 
 const app = express();
 
@@ -27,16 +26,43 @@ const sessionConfig = {
 };
 
 app.use(session(sessionConfig));
-app.use(sessionMiddle);
+app.use(morgan('dev'));
+// app.use(sessionMiddle);
+
+app.use('/admin', adminRouter);
+
+// app.use('/admin', )
 
 app.use((req, res, next) => {
   const error = createError(404, 'Запрашиваемой страницы не существует на сервере.');
   next(error);
 });
 
-app.use(morgan('dev'));
+app.use((err, req, res, next) => {
+  const appMode = req.app.get('env');
+  // Создаём объект, в котором будет храниться ошибка.
+  let error;
+  // Если мы находимся в режиме разработки, то отправим в ответе настоящую ошибку.
+  //  В противно случае отправим пустой объект.
+  if (appMode === 'development') {
+    error = err;
+  } else {
+    error = {};
+  }
+
+  // Записываем информацию об ошибке и сам объект ошибки в специальные переменные,
+  //  доступные на сервере глобально, но только в рамках одного HTTP-запроса.
+  res.locals.message = err.message;
+  res.locals.error = error;
+
+  // Задаём в будущем ответе статус ошибки. Берём его из объекта ошибки, если он там есть.
+  // В противно случае записываем универсальный стату ошибки на сервере - 500.
+  res.status(err.status || 500);
+  // Формируем HTML-текст из шаблона "error.hbs" и отправляем его на клиент в качестве ответа.
+  res.render('registration/error');
+});
 
 app.listen(process.env.PORT, () => {
   console.log('Подключение прошло успешно');
-  connect.connect();
-})
+  connect();
+});
