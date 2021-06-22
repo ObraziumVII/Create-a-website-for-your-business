@@ -1,0 +1,37 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NastasiaKovalchuk/Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NastasiaKovalchuk/Project/issues"
+  },
+  "homepage": "https://github.com/NastasiaKovalchuk/Project#readme",
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "connect-mongo": "^4.4.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "hbs": "^4.1.2",
+    "mongoose": "^5.12.14",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "sha256": "^0.2.0"
+  }
+}
