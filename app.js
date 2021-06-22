@@ -7,7 +7,10 @@ const MongoStore = require('connect-mongo');
 // const cookieP = require('cookie-parser');
 const { connect } = require('./db/models/connect');
 const { sessionMiddle, isAdmin } = require('./middleware/middleware');
-const indexRouter = require('./routes/index.js');
+
+const indexRouter = require('./routes/index');
+const adminRouter = require('./routes/admin');
+
 
 const app = express();
 
@@ -34,6 +37,8 @@ app.use(session(sessionConfig));
 //   const error = createError(404, 'Запрашиваемой страницы не существует на сервере.');
 //   next(error);
 // });
+
+app.use('/admin', adminRouter);
 
 app.use('/', indexRouter);
 // app.get('/', (req, res) => {
