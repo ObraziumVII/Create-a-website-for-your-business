@@ -25,7 +25,7 @@ const sessionConfig = {
   saveUninitialized: true,
   name: 'Cookie111',
   cookie: { secure: false },
-  store: MongoStore.create({ mongoUrl: process.env.DB }), // ?????
+  store: MongoStore.create({ mongoUrl: process.env.DB }),
 };
 
 app.use(session(sessionConfig));
