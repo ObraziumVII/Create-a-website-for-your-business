@@ -3,7 +3,7 @@
   <div class="top">
     <div id="top">
       <div class="mvp">Создайте<br> MVP своего продукта <br><span>бесплатно</span></div>
-      <button class="btnmvp">СОЗДАТЬ</button>
+      <button class="btnmvp" ><a href='#apply'>СОЗДАТЬ</a></button>
     </div>
     <div>
       <img src="img/image 1.png">
@@ -29,17 +29,17 @@
       <div class="text">ВЫБЕРЕТЕ <br>РЕФЕРЕНСЫ</div>
     </div>
   </div>
-  <h2 class="apply">Заполните заявку</h2>
+  <h2 class="apply" id='apply'>Заполните заявку</h2>
   <form action="/" method="POST">
     <label>Контактные данные</label>
     <div class="inputName">
-      <input name="name" class="input" placeholder="Имя">
-      <input name="companyName" class="input" placeholder="Название компании">
+      <input name="name" class="input" placeholder="Имя" required>
+      <input name="companyName" class="input" placeholder="Название компании" required>
     </div>
     <div class="">
-      <input name="phone" id="phone" type="tel" class="input" placeholder="Ваш телефон">
+      <input name="phone" id="phone" type="tel" class="input" placeholder="Ваш телефон" required>
     
-      <input name="email" class="input" placeholder="Ваш email">
+      <input name="email" class="input" placeholder="Ваш email" required>
     </div>
     <div>
       <label>Ваш проект</label>
