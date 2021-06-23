@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
+const mongoose = require('mongoose');
 
 const dbUrl = process.env.DB;
 const options = {

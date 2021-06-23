@@ -1,0 +1,50 @@
+<div class="row">
+  <form class="col s8 offset-s8" name="editRequest" action="/admin/request/{{id}}"  method="POST" id='editForm'>
+
+    <div class="cont">
+
+      <div class="login-container">
+        {{#if message}}
+        <h1 class='erorMessage'>{{message}}</h1>
+        {{/if}}
+        <input type="text" class="validate" name="adminComment">
+        <label for="adminComment">Комментарий</label>
+        <br>
+        
+        <p>
+          <label>
+            <input type="checkbox" value = "В обработке" checked="checked" name="status" />
+            <span>В обработке</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" value = "Обработана неудачно" name="status" />
+            <span>Обработана неудачно</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" value = "В процессе разработки студентами" name="status" />
+            <span>В процессе разработки студентами</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" value = "Выполнено успешно" name="status" />
+            <span>Выполнено успешно</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" value = "Заказчик высказал претензии" name="status" />
+            <span><Заказчик высказал претензии</span>
+          </label>
+        </p>
+      </div>
+      <button class="waves-effect waves-light btn">Зарегистрироваться!</button>
+    </div>
+
+
+  </form>
+</div>
