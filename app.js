@@ -41,8 +41,9 @@ app.use('*', (req, res, next) => {
 };
 
 app.use((err, req, res, next) => {
-  const { statusCode = 500, message = 'Something went wrong' } = err;
-  res.status(statusCode)
+  const { statusCode = 500 } = err;
+  if (!err.message) err.message = 'Something went wrong';
+  res.status(statusCode).render('error', { err });
 })
 // app.use((err, req, res, next) => {
 //   const appMode = req.app.get('env');

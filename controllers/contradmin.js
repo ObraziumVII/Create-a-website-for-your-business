@@ -1,6 +1,7 @@
 require('dotenv').config();
 const bcrypt = require('bcrypt');
 const Admin = require('../db/models/adminModel');
+<<<<<<< HEAD:controllers/admin.js
 const nodemailer = require("nodemailer");
 let transporter = nodemailer.createTransport({
   auth: {
@@ -8,6 +9,9 @@ let transporter = nodemailer.createTransport({
     pass: testAccount.pass, // generated ethereal password
   },
 });
+=======
+const Request = require('../db/models/requestModel');
+>>>>>>> main:controllers/contradmin.js
 
 const adminSignup = async (req, res) => {
   const { name, email, password, secret } = req.body;
@@ -50,5 +54,27 @@ const adminLogin = async (req, res) => {
   }
   res.ok(false); // if we want to login with fetch, we can check if response.ok
 };
+const showReq = async (req, res) => {
+  id = req.params.idreq;
+  const request = await Request.findOne({ _id: id });
+  console.log(request);
+  res.render('admin/request', { request });
+}
+const editReq = async (req, res) => {
+  id = req.params.idreq;
+  const request = await Request.findOne({ _id: id });
+  console.log(request._id);
+  res.render('admin/editForm', { id: request._id });
+}
+const updReq = async (req, res) => {
+  let request = await Request.findById(req.params.idreq);
+  try {
+  console.log(req.body);
+  request = await Request.findByIdAndUpdate(req.params.idreq, { adminComment: req.body.adminComment, status: req.body.status });
+  } catch (error) {
+    console.log('не вышло');
+  }
+  res.render('admin/request', );
+}
 
-module.exports = { adminLogin, adminSignup };
+module.exports = { adminLogin, adminSignup, showReq, editReq, updReq  };

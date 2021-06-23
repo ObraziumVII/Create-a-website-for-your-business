@@ -8,6 +8,7 @@ const requestSchema = Schema({
   description: String,
   img: String,
   link: String,
+  adminComment: String,
   status: { type: String, default: 'В обработке' },
   adminComment: String,
 },

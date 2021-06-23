@@ -1,5 +1,6 @@
 const express = require('express');
-const { adminLogin, adminSignup } = require('../controllers/admin');
+const Request = require('../db/models/requestModel');
+const { adminLogin, adminSignup, showReq, editReq, updReq } = require('../controllers/contradmin');
 
 const router = express.Router();
 
@@ -21,8 +22,16 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', adminSignup);
 
-router.get('/requests', (req, res) => {
-  res.render('requests');
+router.get('/requests', async (req, res) => {
+  const request = await Request.find();
+  console.log(request);
+  res.render('requests', { admin: 'eeee' });
 });
+
+router.get('/requests/:idreq', showReq);
+
+router.get('/requests/:idreq/edit', editReq);
+
+router.post('/requests/:idreq', updReq);
 
 module.exports = router;
