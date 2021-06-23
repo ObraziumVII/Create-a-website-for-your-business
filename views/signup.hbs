@@ -1,15 +1,25 @@
 <form method="post" action="/admin/signup">
    <label for="login-input" class="loginInput">Введите Ваше имя администратора:</label>
-   <input id="login-input" name="name" type="text" placeholder="Имя">
+   <input id="login-input" name="name" type="text" placeholder="Имя" required>
 
    <label for="login-input" class="loginInput">Введите Ваш email:</label>
-   <input id="login-input" name="email" type="email" placeholder="Email">
+   <input id="login-input" name="email" type="email" placeholder="Email" required>
 
    <label for="pass-input" class="passInput">Введите Ваш пароль:</label>
-   <input id="pass-input" name="password" type="password" placeholder="Пароль">
+   <input id="pass-input" name="password" type="password" placeholder="Пароль" required>
+   
+   <label for="passwordRepeat" class="passInput">Повторите пароль</label>
+  <input name="passwordRepeat" minlength="6" type="password" id="passwordRepeat" required>
 
-    <label for="pass-input" class="passInput">Введите Ваш secret:</label>
-   <input id="pass-input" name="secret" type="password" placeholder="secret">
+  <label for="pass-input" class="passInput">Введите Ваш secret:</label>
+   <input id="pass-input" name="secret" minlength="6" type="password" placeholder="secret" required>
+   
 
+   <div id="passwordError" class="mb-3 error" hidden>
+      <div>
+        <p>Введенные пароли не совпадают!</p>
+      </div>
+    </div>
    <input type="submit" value="Signup">
+   <button id="submitButton" type="submit">Зарегистрироваться</button>
 </form>
