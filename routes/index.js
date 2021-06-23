@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
       error: {},
     });
   }
-  res.send('/');
+  res.send('Ваша заявка принята');
 });
 
 module.exports = router;
