@@ -22,7 +22,7 @@ router.get('/signup', (req, res) => {
 router.post('/signup', adminSignup);
 
 router.get('/requests', (req, res) => {
-  res.render('requests');
+  res.render('requests', { admin: 'eeee' });
 });
 
 module.exports = router;
