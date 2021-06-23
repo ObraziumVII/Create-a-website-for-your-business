@@ -1,6 +1,8 @@
 const express = require('express');
 const Request = require('../db/models/requestModel');
-const { adminLogin, adminSignup, showReq, editReq, updReq } = require('../controllers/contradmin');
+const {
+  adminLogin, adminSignup, showReq, editReq, updReq,
+} = require('../controllers/contradmin');
 
 const router = express.Router();
 
