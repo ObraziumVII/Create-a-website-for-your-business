@@ -1,0 +1,14 @@
+<h1>Пожалуйста, войдите в систему</h1>
+
+<a href='/' type='submit' >На главную</a>
+<form method="post" action="/admin/login">
+   <label for="login-input" class="loginInput">Введите Ваше имя администратора:</label>
+   <input id="login-input" name="name" type="text" placeholder="Имя">
+
+   <label for="pass-input" class="passInput">Введите Ваш пароль:</label>
+   <input id="pass-input" name="password" type="text" placeholder="Пароль">
+
+   <input type="submit" value="Войти">
+</form>
+
+<h1>{{loginMessage}}</h1>

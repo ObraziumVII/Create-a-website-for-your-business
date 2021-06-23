@@ -1,14 +1,15 @@
-const sessionMiddle = (req, res, next) => {
-  res.locals.admin.id = req.session?.admin.id;
-  next();
-};
+// const sessionMiddle = (req, res, next) => {
+//   res.locals.admin = req.session?.admin_id;
+//   next();
+// };
 
 const isAdmin = (req, res, next) => {
-  if (req.session.admin.id) {
+  if (req.session.admin_id) {
     next();
   } else {
     res.redirect('/');
   }
 };
 
-module.exports = { sessionMiddle, isAdmin };
+module.exports = { isAdmin };
+

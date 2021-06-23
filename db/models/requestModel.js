@@ -10,6 +10,7 @@ const requestSchema = Schema({
   link: String,
   adminComment: String,
   status: { type: String, default: 'В обработке' },
+  adminComment: String,
 },
 {
   timestamps: true,
