@@ -38,7 +38,7 @@ app.use('/admin', adminRouter);
 app.use('*', (req, res, next) => {
   const err = new Error('Page Not Found', 404);
   next(err);
-};
+});
 
 app.use((err, req, res, next) => {
   const { statusCode = 500 } = err;
