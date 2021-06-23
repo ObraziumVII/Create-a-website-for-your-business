@@ -24,7 +24,7 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false },
-  store: MongoStore.create({ mongoUrl: process.env.DB }), // ?????
+  store: MongoStore.create({ mongoUrl: process.env.DB }),
 };
 
 app.use(session(sessionConfig));
