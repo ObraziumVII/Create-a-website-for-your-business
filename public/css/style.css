@@ -1,9 +1,14 @@
 #body {
+  display:flex;
   position: relative;
-  min-height: 100vh;
-  min-width: 100vw;
+  /* min-height: 100vh;
+  min-width: 100vw; */
+  justify-content: center;
+  align-items: center;
 }
-
+.main {
+  margin-left: 100px;
+}
 .mvp {
   width: 401px;
   height: 268px;
@@ -11,28 +16,42 @@
   top: 157px;
   font-family: RF Rostin;
   font-style: normal;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 60px;
   line-height: 112%;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: #4520AB;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  letter-spacing: 1px;
 }
-
+span {
+  color:#FFBC5B;
+  font-family: RF Rostin;
+}
+#top{
+  margin-left: 0px;
+  font-family: RF Rostin;
+}
 .product {
-  width: 877px;
+  display: flex;
   height: 114px;
-  left: 213px;
-  top: 631px;
   font-family: RF Rostin;
   font-style: normal;
-  font-weight: bold;
+  text-align: justify;
   font-size: 20px;
   line-height: 188%;
-  letter-spacing: -0.04em;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -0.02em;
   color: #4520AB;
   background: #ECECEC;
   border-radius: 17px;
+  margin: 50px 0px 60px 0px;
+  padding: 30px 30px 30px 60px;
+  letter-spacing: 2px;
 }
 
 .btnmvp {
@@ -45,33 +64,45 @@
   border-radius: 30px;
   color: #4520AB;
   font-family: RF Rostin;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .footer {
-  /* display: flex; */
-  /* position: relative; */
-  left: 0;
-  bottom: 0;
   width: 100%;
+  height: 70px;
   background-color: #4520ab;
   font-family: RF Rostin;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 70px;
+  color: #66eefb;;
+  padding-top: 20px;
 }
 
 .circle {
+  display: flex;
   left: 15%;
   right: 15%;
   top: 15%;
   bottom: 15%;
   background: #FFBC5B;
-  text-align: center;
-  font-size: 24px;
-  justify-content: center;
-  align-items: center;
+  font-size: 26px;
   border-radius: 50%;
-  height: 62px;
-  width: 62px;
+  height: 64px;
+  width: 64px;
   color: #4520ab;
   font-family: RF Rostin;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+  font-weight: bold;
 }
 
 .arrow {
@@ -80,6 +111,8 @@
   text-align: center;
   color: #4520ab;
   font-family: RF Rostin;
+  margin-top: 40px;
+  margin-right: 50px;
 }
 
 .row {
@@ -90,7 +123,7 @@
 }
 
 .btnfile {
-  /* position: absolute; */
+  
   width: 180px;
   height: 51px;
   left: 172px;
@@ -98,29 +131,55 @@
   border-radius: 30px;
   color: #4520AB;
   font-family: RF Rostin;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+
+  /* letter-spacing: 1px; */
+}
+.login {
+  display: flex;
+  flex-direction: row;
+  justify-content:end;
+  align-items: flex-end;
+  margin-left: 300px;
+  font-family: RF Rostin;
 }
 
 #log {
-    display: flex;
-  /* position: absolute; */
-  /* width: 247px;
-  height: 51px; */
-  background: #FFBC5B;
-  box-shadow: 0px 7px 29px rgba(255, 188, 91, 0.37);
+  display: flex;
+  background: #66eefb;
+  box-shadow: 0px 7px 29px #4520AB;
   border-radius: 30px;
   color: #4520AB;
+  width: 180px;
+  height: 51px;
+  left: 172px;
   font-family: RF Rostin;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 18px;
 }
 #sign {
   display: flex;
-    /* position: absolute; */
-  width: 247px;
-  height: 51px;
-  background: #FFBC5B;
-  box-shadow: 0px 7px 29px rgba(255, 188, 91, 0.37);
-  border-radius: 50px;
+  background: #66eefb;
+  box-shadow: 0px 7px 29px #4520AB;
+  border-radius: 30px;
   color: #4520AB;
   font-family: RF Rostin;
+  width: 180px;
+  height: 51px;
+  left: 172px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .top {
@@ -128,23 +187,25 @@
   display: flex;
   flex-direction: row;
   color: #4520AB;
-/* position: absolute; */
+  margin-top: 20px;
+justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .text {
-  /* position: absolute; */
-  /* width: 156px;
-  height: 54px;
-  left: 174px;
-  top: 987px; */
   font-family: RF Rostin;
   font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 150%;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: #4520AB;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  letter-spacing: 1px;
+  margin-top: 10px;
 }
 
 .apply {
@@ -154,32 +215,12 @@
   left: 172px;
   font-family: RF Rostin;
   font-style: normal;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 50px;
   line-height: 200%;
-  /* identical to box height, or 100px */
   letter-spacing: -0.06em;
   color: #4520AB;
-}
-
-.input {
-  color: #4520AB;
-
-  /* position: absolute; */
-  width: 224px;
-  height: 24px;
-  left: 178px;
-  font-family: RF Rostin;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 150%;
-  /* identical to box height, or 24px */
-  letter-spacing: -0.04em;
-  border: 0px 0px 1px 0px solid #4520AB;
-  outline: none;
-border: none;
-border: solid 1px #f2f2f2;
+  letter-spacing: 2px;
 }
 
 label {
@@ -189,9 +230,162 @@ label {
   left: 174px;
   font-family: RF Rostin;
   font-style: normal;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 18px;
   line-height: 150%;
   letter-spacing: -0.04em;
   color: #4520AB;
+  letter-spacing: 1px;
 }
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  color: #4520AB;
+  margin-top: 30px;
+  font-family: RF Rostin;
+}
+
+ .sendForm {
+  /* position: absolute; */
+  width: 247px;
+  height: 51px;
+  left: 172px;
+  background: #FFBC5B;
+  box-shadow: 0px 7px 29px rgba(255, 188, 91, 0.37);
+  border-radius: 30px;
+  color: #4520AB;
+  font-weight: bold;
+  font-family: RF Rostin;
+}
+.bottomtext {
+  margin-left: 20px;
+}
+
+#link {
+  margin-top: 30px;
+}
+
+.navbar {
+  display: flex;
+  background-color: #4520AB;
+  color: #66eefb;
+  height: 100px;
+  padding: 7px 7px 7px 7px ;
+  /* margin-left: 100px; */
+  /* width: 900px; */
+ /* justify-content: end;
+  align-items: flex-end;
+  text-align: justify; */
+  font-family: RF Rostin;
+}
+
+.elbrus {
+  display: flex;
+  background-color: #66eefb;
+  color: #4520AB;
+  width: 90px;
+  height: 90px;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  font-family: RF Rostin;
+  font-style: normal;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 450px;
+  /* letter-spacing: -0.1em; */
+  letter-spacing: 2px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  font-family: RF Rostin;
+  font-style: normal;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+.coding {
+  display: flex;
+  margin-left: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  font-family: RF Rostin;
+  font-style: normal;
+  font-weight: bold;
+  /* letter-spacing: -0.01em; */
+  letter-spacing: 1px;
+}
+
+.one {
+  margin: 20px;
+}
+
+.input {
+  font-family: RF Rostin;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  margin-right: 20px;
+  border: none;
+  border-bottom: 1px solid #4520AB;
+  margin-top: 30px;
+  height: 30px;
+  outline: none;
+  margin-right: 40px;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+input::-webkit-input-placeholder {
+  color: #a6a96d 50%;
+}
+ 
+
+.inputdecription {
+  width: 500px;
+  color: #4520AB 50%;
+  height: 24px;
+  left: 178px;
+  font-family: RF Rostin;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  margin-right: 20px;
+  border: none;
+  border-bottom: 1px solid #4520AB;
+  margin: 10px 0;
+  height: 30px;
+  outline: none;
+ 
+}
+ .link {
+  width: 500px;
+  color: #4520AB 50%;
+  height: 24px;
+  left: 178px;
+  font-family: RF Rostin;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  margin-right: 20px;
+  border: none;
+  border-bottom: 1px solid #4520AB;
+  margin: 10px 20px;
+  height: 30px;
+  outline: none;
+ }
