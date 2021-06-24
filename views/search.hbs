@@ -1,36 +1,4 @@
-{{!-- <nav class='navV'>
-    <div class="nav-wrapper blue darken-4">
-      <a href="#" class="brand-logo">Elbrus</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><h3>{{admin}}</h3></li>
-        {{!-- <li><a href="badges.html">Components</a></li> --}}
-       
-      </ul>
-    </div>
-</nav> --}}
-
-{{!-- <div class='searchBar'>
-  <label for="sarch-input" class="sarchInput">Заявки</label>
-  <input id="search-input" name="sarch" type="text" placeholder="🔎 поиск">
-</div> --}}
-<script defer src='/js/request.js'></script>
-<div class='searchBar'>
-    <div class='zayavki'>Заявки</div>
-    <form method='post' action='/admin/requests' name='inputForm'>
-      <input id="search-input" name="search" type="text" placeholder="поиск">
-      <button class='loop'>🔎</button>
-    </form>
-    <div id='ulReq'>
-      <a href="/admin/requests?status=all"><button id='http://localhost:3000/admin/requests?status=all' class='barSearch'>Все заявки</button></a>
-      <a href="/admin/requests?status=открыта"><button id='http://localhost:3000/admin/requests?status=открыта' class='barSearch'>Открыта</button></a>
-      <a href="/admin/requests?status=в%работе"><button id='http://localhost:3000/admin/requests?status=в%работе' class='barSearch'>В работе</button></a>
-      <a href="/admin/requests?status=отменена"><button id='http://localhost:3000/admin/requests?status=отменена' class='barSearch'>Отменена</button></a>
-      <a href="/admin/requests?status=выполнена"><button id='http://localhost:3000/admin/requests?status=выполнена' class='barSearch'>Выполнена</button></a>
-    </div>
-</div>
-
-<div class='requests' id='requestsTable'>
-  <table class="highlight">
+<table class="highlight">
     <thead>
     <tr>
      <th>Дата</th>
@@ -131,5 +99,3 @@
       {{/each}}
     </tbody>
   </table>
-</div>
-
