@@ -134,8 +134,8 @@ const search = async (req, res) => {
     }
   }
 
-  res.render('requests', {
-    flag, validArrNames, validArrCompany, validArrPhones, validArrEmail, validArrDescr, validArrCom,
+  res.render('search', {
+    flag, validArrNames, validArrCompany, validArrPhones, validArrEmail, validArrDescr, validArrCom, layout: false,
   });
 };
 

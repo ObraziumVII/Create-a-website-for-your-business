@@ -32,6 +32,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "hbs": "^4.1.2",
+    "imask": "^6.0.7",
     "intl-tel-input": "^17.0.13",
     "mongoose": "^5.12.14",
     "morgan": "^1.10.0",
