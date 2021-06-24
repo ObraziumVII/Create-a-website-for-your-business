@@ -1,10 +1,21 @@
+body {
+  margin: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
 #body {
   display:flex;
   flex-wrap: wrap;
   position: relative;
   justify-content: center;
   align-items: center;
+  
+  align-content: flex-start;
+  min-height: 723px;
 }
+
 .main {
   margin-left: 100px;
 }
@@ -96,9 +107,9 @@ span {
   justify-content:end;
   align-items: center;
   text-align: center;
-  margin-top: 70px;
+  margin-top: 30px;
   color: #66eefb;;
-  padding-top: 20px;
+
   bottom: 0px;
 }
 .apply {
@@ -386,12 +397,32 @@ label {
   height: 30px;
   outline: none;
  }
-.tr:hover {
-  box-shadow: 0px 0px 3px 3px #4520AB;
+
+.tr {
+  border-collapse: collapse;
+  background-color: #ffebce;
+  color: #4e350e;
+  font-size: 18px;
 }
+
+.tr:hover {
+  box-shadow: 0px 0px 3px 3px #ffd597;
+  background-color: #fff8ef;
+  cursor: pointer;
+  color: #81602b;
+}
+
 .td {
-  border: 2px solid black;
- }
+  border: 1px solid #ddac5e;
+  text-align: center
+}
+
+.td:hover {
+  border: 1px solid #fffdf4;
+  background-color: #ffffff;
+  color: #a58146;
+}
+
 .flex-cont {
   border: 5px solid #4520AB;
   display:flex;
@@ -489,4 +520,19 @@ label {
 
 .test1 {
   display: flex;
+}
+
+.reqInfo {
+  color: #4520AB;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 7px;
+}
+
+.reqInfo:hover, .zayavki:hover {
+  cursor: default;
+}
+
+.Eji {
+  margin-left: 30px;
 }
