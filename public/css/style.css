@@ -64,8 +64,8 @@ span {
   border-radius: 30px;
   color: #4520AB;
   font-family: RF Rostin;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   text-align: justify;
   margin-top: 20px;
   text-align: center;

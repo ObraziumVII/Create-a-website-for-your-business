@@ -33,22 +33,22 @@
   <form action="/" id="sendForm" method="POST">
     <label>Контактные данные</label>
     <div class="inputName">
-      <input name="name" class="input" placeholder="Имя" required>
-      <input name="companyName" class="input" placeholder="Название компании" required>
+      <input name="name" id="inputName" class="input" placeholder="Имя" required>
+      <input name="companyName" id="inputCompany" class="input" placeholder="Название компании" required>
     </div>
     <div class="">
-      <input name="phone" id="phone" type="tel" class="input" placeholder="Ваш телефон" required>
-      <input name="email" class="input" placeholder="Ваш email" required>
+      <input name="phone" id="inputPhone" type="tel" class="input" placeholder="Ваш телефон" required>
+      <input name="email" id="inputEmail" class="input" placeholder="Ваш email" required>
     </div>
     <div id="project">
       <label >Ваш проект</label>
     </div>
     <div>
-      <input name="description" class="inputdecription" placeholder="Пожалуйста, максимально подробно опишите свою идею, проект">
+      <input name="description" id="inputDecription" class="inputdecription" placeholder="Пожалуйста, максимально подробно опишите свою идею, проект">
     </div>
     <div id="link">
-      <button name="img" class="btnfile">ЗАГРУЗИТЬ ФАЙЛ</button>
-      <input name="link" class="link" placeholder="Прикрепить ссылку">
+      <button name="img" id="inputImg" class="btnfile">ЗАГРУЗИТЬ ФАЙЛ</button>
+      <input name="link" id="inputLink" class="link" placeholder="Прикрепить ссылку">
     </div>
     <div class="bottom">
       <button class="sendForm" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
