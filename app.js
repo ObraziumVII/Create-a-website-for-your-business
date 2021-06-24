@@ -35,6 +35,7 @@ app.use(morgan('dev'));
 app.use((req, res, next) => {
   if (req.session.admin_id) {
     res.locals.admin = true;
+    res.locals.adminName = req.session.adminName;
   }
   next();
 });

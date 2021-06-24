@@ -425,3 +425,73 @@ label {
 #project {
   margin-top: 70px;
 }
+
+.searchBar {
+  display: flex;
+}
+
+.barSearch {
+  width: 177px;
+  height: 51px;
+  left: 172px;
+  top: 463px;
+  background: #FFBC5B;
+  box-shadow: 0px 7px 29px rgba(255, 188, 91, 0.37);
+  border-radius: 30px;
+  color: #4520AB;
+  font-family: RF Rostin;
+  /* justify-content: center;
+  align-items: center; */
+  text-align: justify;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+
+
+  outline: none;
+  border: none;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.barSearch:hover{
+  cursor: pointer;
+  animation: pulse 1s;
+  background: #ffc471;
+  color: #6541c7;
+}
+
+.loop {
+  width: 51px;
+  height: 51px;
+  left: 172px;
+  top: 463px;
+  background: #6a43d3;
+  box-shadow: 0px 7px 29px #2c0d81(255, 188, 91, 0.37);
+  border-radius: 30px;
+  color: #4520AB;
+  text-align: justify;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+
+  outline: none;
+  border: none;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.loop:hover{
+  cursor: pointer;
+  animation: pulse 1s;
+  background: #8f6af5;
+}
+
+.zayavki {
+  color: #4520AB;
+  text-align: justify;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
