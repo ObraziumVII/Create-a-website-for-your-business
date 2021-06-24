@@ -2,7 +2,7 @@ const express = require('express');
 const Request = require('../db/models/requestModel');
 const { isAdmin } = require('../middleware/middleware');
 const {
-  adminLogin, adminSignup, showReq, editReq, updReq,
+  adminLogin, adminSignup, showReq, editReq, updReq, search,
 } = require('../controllers/contradmin');
 
 const router = express.Router();
@@ -45,11 +45,7 @@ router.get('/requests', isAdmin, async (req, res, next) => {
   }
 });
 
-router.post('/requests', async (req, res) => {
-  const { search } = req.body;
-  const request = await Request.find({ status: 'выполнена' });
-  res.render('requests', { admin: 'eeee', request });
-});
+router.post('/requests', search);
 
 router.get('/requests/s/', (req, res) => {
   // const { id } = req.params;
@@ -64,3 +60,4 @@ router.get('/requests/:idreq/edit', editReq);
 router.post('/requests/:idreq', updReq);
 
 module.exports = router;
+

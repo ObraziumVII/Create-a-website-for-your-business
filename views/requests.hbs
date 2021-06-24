@@ -40,9 +40,12 @@
      <th>Почта</th>
      <th>Проект</th>
      <th>Статус заявки</th>
+     {{#if flag}}
+     <th>Найдено по:</th>
+     {{/if}}
     </tr>
     <div class='allRequests'>
-     {{#each request}}
+      {{#each request}}
       <tr class='tr' id='{{this._id}}'> 
         <td class='td'>{{this.createdAt}}</td>
         <td class='td'>{{this.name}}</td>
@@ -52,7 +55,79 @@
         <td class='td'>{{this.description}}</td>
         <td class='td'>{{this.status}}</td>
       </tr>
-     {{/each}}
+      {{/each}}
+      {{#each validArrNames}}
+      <tr class='tr' id='{{this._id}}'> 
+        <td class='td'>{{this.createdAt}}</td>
+        <td class='td'>{{this.name}}</td>
+        <td class='td'>{{this.companyName}}</td>
+        <td class='td'>{{this.phone}}</td>
+        <td class='td'>{{this.email}}</td>
+        <td class='td'>{{this.description}}</td>
+        <td class='td'>{{this.status}}</td>
+        <td class='td'>имени</td>
+      </tr>
+      {{/each}}
+      {{#each validArrCompany}}
+      <tr class='tr' id='{{this._id}}'> 
+        <td class='td'>{{this.createdAt}}</td>
+        <td class='td'>{{this.name}}</td>
+        <td class='td'>{{this.companyName}}</td>
+        <td class='td'>{{this.phone}}</td>
+        <td class='td'>{{this.email}}</td>
+        <td class='td'>{{this.description}}</td>
+        <td class='td'>{{this.status}}</td>
+        <td class='td'>компании</td>
+      </tr>
+      {{/each}}
+      {{#each validArrPhones}}
+      <tr class='tr' id='{{this._id}}'> 
+        <td class='td'>{{this.createdAt}}</td>
+        <td class='td'>{{this.name}}</td>
+        <td class='td'>{{this.companyName}}</td>
+        <td class='td'>{{this.phone}}</td>
+        <td class='td'>{{this.email}}</td>
+        <td class='td'>{{this.description}}</td>
+        <td class='td'>{{this.status}}</td>
+        <td class='td'>телефону</td>
+      </tr>
+      {{/each}}
+      {{#each validArrEmail}}
+      <tr class='tr' id='{{this._id}}'> 
+        <td class='td'>{{this.createdAt}}</td>
+        <td class='td'>{{this.name}}</td>
+        <td class='td'>{{this.companyName}}</td>
+        <td class='td'>{{this.phone}}</td>
+        <td class='td'>{{this.email}}</td>
+        <td class='td'>{{this.description}}</td>
+        <td class='td'>{{this.status}}</td>
+        <td class='td'>почте</td>
+      </tr>
+      {{/each}}
+      {{#each validArrDescr}}
+      <tr class='tr' id='{{this._id}}'> 
+        <td class='td'>{{this.createdAt}}</td>
+        <td class='td'>{{this.name}}</td>
+        <td class='td'>{{this.companyName}}</td>
+        <td class='td'>{{this.phone}}</td>
+        <td class='td'>{{this.email}}</td>
+        <td class='td'>{{this.description}}</td>
+        <td class='td'>{{this.status}}</td>
+        <td class='td'>описанию заявки</td>
+      </tr>
+      {{/each}}
+      {{#each validArrCom}}
+      <tr class='tr' id='{{this._id}}'> 
+        <td class='td'>{{this.createdAt}}</td>
+        <td class='td'>{{this.name}}</td>
+        <td class='td'>{{this.companyName}}</td>
+        <td class='td'>{{this.phone}}</td>
+        <td class='td'>{{this.email}}</td>
+        <td class='td'>{{this.description}}</td>
+        <td class='td'>{{this.status}}</td>
+        <td class='td'>комментарию админа</td>
+      </tr>
+      {{/each}}
     </div>
   </table>
 </div>

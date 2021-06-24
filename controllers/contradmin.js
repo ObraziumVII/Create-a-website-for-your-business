@@ -56,6 +56,7 @@ const adminLogin = async (req, res, next) => {
 
 const showReq = async (req, res) => {
   id = req.params.idreq;
+  console.log(id);
   const request = await Request.findOne({ _id: id });
   console.log(request);
   res.render('admin/request', { request });
@@ -76,7 +77,65 @@ const updReq = async (req, res) => {
   }
   res.render('admin/request');
 };
+const search = async (req, res) => {
+  let { search } = req.body;
+  search = search.toLowerCase();
+  let flag = false;
+
+  const requests = await Request.find();
+  let validArrNames = [];
+  let validArrCompany = [];
+  let validArrPhones = [];
+  let validArrEmail = [];
+  let validArrDescr = [];
+  let validArrCom = [];
+  //поиск по имени
+  for (let i =0; i <requests.length; i++) {
+    if (search == requests[i].name.toLowerCase()){
+      validArrNames.push(requests[i]);
+      flag = true;
+    }
+  }
+  // поиск по компании
+  for (let i =0; i <requests.length; i++) {
+    if (search == requests[i].companyName.toLowerCase()){
+      validArrCompany.push(requests[i]);
+      flag = true;
+    }
+  }
+  // поиск по номеру телефона
+  for (let i =0; i <requests.length; i++) {
+    if (search == requests[i].phone.toLowerCase()){
+      validArrPhones.push(requests[i]);
+      flag = true;
+    }
+  }
+  // поиск по номеру email
+  for (let i =0; i <requests.length; i++) {
+    if (search == requests[i].email.toLowerCase()){
+      validArrEmail.push(requests[i]);
+      flag = true;
+    }
+  }
+  // поиск по совпадению в описании
+  for (let i =0; i <requests.length; i++) {
+    if (requests[i].description.toLowerCase().includes(search)){
+      validArrDescr.push(requests[i]);
+      flag = true;
+    }
+  }
+  for (let i =0; i <requests.length; i++) {
+    if (requests[i].adminComment){
+      if (requests[i].adminComment.toLowerCase().includes(search)){
+        validArrCom.push(requests[i]);
+        flag = true;
+      }
+    }
+  }
+
+  res.render('requests', { admin: 'eeee', flag, validArrNames, validArrCompany, validArrPhones, validArrEmail, validArrDescr, validArrCom });
+}
 
 module.exports = {
-  adminLogin, adminSignup, showReq, editReq, updReq,
+  adminLogin, adminSignup, showReq, editReq, updReq, search,
 };
