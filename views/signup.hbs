@@ -1,15 +1,30 @@
-<form method="post" action="/admin/signup">
-   <label for="login-input" class="loginInput">Введите Ваше имя администратора:</label>
-   <input id="login-input" name="name" type="text" placeholder="Имя">
-
-   <label for="login-input" class="loginInput">Введите Ваш email:</label>
-   <input id="login-input" name="email" type="email" placeholder="Email">
-
-   <label for="pass-input" class="passInput">Введите Ваш пароль:</label>
-   <input id="pass-input" name="password" type="password" placeholder="Пароль">
-
+<form method="POST" action="/admin/signup">
+  <div>
+    <label>Введите Ваше имя администратора:</label>
+    <input name="name" type="text" placeholder="Имя" required>
+  </div>
+  <div>
+    <label for=class="loginInput">Введите Ваш email:</label>
+    <input name="email" type="email" placeholder="Email" required>
+  </div>
+  <div>
+    <label for="password" class="passInput">Введите Ваш пароль:</label>
+    <input id="password" name="password" minlength="6" type="password" placeholder="Пароль" required>
+  </div>
+  <div>
+    <label for="passwordRepeat" class="passInput">Повторите пароль</label>
+    <input name="passwordRepeat" minlength="6" type="password" id="passwordRepeat" required>
+  </div>
+  <div>
     <label for="pass-input" class="passInput">Введите Ваш secret:</label>
-   <input id="pass-input" name="secret" type="password" placeholder="secret">
-
-   <input type="submit" value="Signup">
+    <input id="pass-input" name="secret" type="password" placeholder="secret" required>
+  </div>
+  <div id="passwordError" hidden>
+    <div>
+      <p>Введенные пароли не совпадают!</p>
+    </div>
+  </div>
+  <div>
+    <button id="submitButton" type="submit">Зарегистрироваться</button>
+  </div>
 </form>
