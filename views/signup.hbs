@@ -1,4 +1,7 @@
-<form method="POST" action="/admin/signup">
+<script defer src="/js/registration.js"></script>
+
+<form method="POST" id="signupButton" action="/admin/signup">
+<span id='error-message-signup'></span>
   <div>
     <label>Введите Ваше имя администратора:</label>
     <input name="name" type="text" placeholder="Имя" required>
@@ -12,19 +15,15 @@
     <input id="password" name="password" minlength="6" type="password" placeholder="Пароль" required>
   </div>
   <div>
-    <label for="passwordRepeat" class="passInput">Повторите пароль</label>
-    <input name="passwordRepeat" minlength="6" type="password" id="passwordRepeat" required>
+    <label for="password-repeat" class="passInput">Повторите пароль</label>
+    <input name="password-repeat" minlength="6" type="password" onblur="check()" id="password-repeat" required>
   </div>
+  <span id='message'></span>
   <div>
     <label for="pass-input" class="passInput">Введите Ваш secret:</label>
-    <input id="pass-input" name="secret" type="password" placeholder="secret" required>
-  </div>
-  <div id="passwordError" hidden>
-    <div>
-      <p>Введенные пароли не совпадают!</p>
-    </div>
+    <input id="pass-input" name="secret-word" type="password" placeholder="secret word" required>
   </div>
   <div>
-    <button id="submitButton" type="submit">Зарегистрироваться</button>
+    <button type="submit">Зарегистрироваться</button>
   </div>
 </form>

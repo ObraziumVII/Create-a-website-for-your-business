@@ -4,11 +4,10 @@
 // };
 
 const isAdmin = (req, res, next) => {
-  if (req.session.admin_id) {
-    next();
-  } else {
-    res.redirect('/');
+  if (!req.session.admin_id) {
+    return res.redirect('/');
   }
+  return next();
 };
 
 module.exports = { isAdmin };

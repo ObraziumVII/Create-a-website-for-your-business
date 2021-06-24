@@ -1,5 +1,6 @@
 const express = require('express');
 const Request = require('../db/models/requestModel');
+const { isAdmin } = require('../middleware/middleware');
 const {
   adminLogin, adminSignup, showReq, editReq, updReq, search,
 } = require('../controllers/contradmin');
@@ -24,32 +25,27 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', adminSignup);
 
-router.get('/requests', async (req, res) => {
-  const request = await Request.find();
-  res.render('requests', { admin: 'eeee', request });
+/**
+ * Вместо несколих роутов для категорий,
+ * сделал один используя query
+ */
+router.get('/requests', isAdmin, async (req, res, next) => {
+  const { status } = req.query;
+  try {
+    if (!status) {
+      const request = await Request.find();
+      return res.render('requests', { request });
+    }
+    const request = await Request.find({ status });
+    return res.render('requests', { request });
+  } catch (err) {
+    err.status = 404;
+    err.message = 'There is no search with this status';
+    next(err);
+  }
 });
 
 router.post('/requests', search);
-
-router.get('/requests/inprocess', async (req, res) => {
-  const request = await Request.find({ status: 'открыта' });
-  res.render('requests', { admin: 'eeee', request });
-});
-
-router.get('/requests/inwork', async (req, res) => {
-  const request = await Request.find({ status: 'в работе' });
-  res.render('requests', { admin: 'eeee', request });
-});
-
-router.get('/requests/canceled', async (req, res) => {
-  const request = await Request.find({ status: 'отменена' });
-  res.render('requests', { admin: 'eeee', request });
-});
-
-router.get('/requests/done', async (req, res) => {
-  const request = await Request.find({ status: 'выполнена' });
-  res.render('requests', { admin: 'eeee', request });
-});
 
 router.get('/requests/s/', (req, res) => {
   // const { id } = req.params;

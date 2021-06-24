@@ -19,7 +19,7 @@ const adminSignup = async (req, res, next) => {
     if (secret === process.env.SECRET) {
       const foundUser = await Admin.findOne({ email });
       if (foundUser) {
-        throw new Error('this email is taken');
+        return res.status(409).json({ error: 'This email is taken, please login instead' });
       }
       const pwd = await bcrypt.hash(password, 10);
       const admin = await Admin.create({ name, email, password: pwd });
@@ -31,30 +31,27 @@ const adminSignup = async (req, res, next) => {
       //   subject: 'Singup secceeded',
       //   html: '<h1>You are signed up</h1>'
       // })
-      res.redirect('/admin/requests');
+      res.status(200).end();
+      // res.redirect('/admin/requests');
+    } else {
+      return res.status(409).json({ error: 'your admin secret code is wrong' });
     }
   } catch (err) {
     err.statusCode = 500;
     return next(err);
-    // res.render(res.render('error'), {
-    //   errorMessage: 'Данные введены неверно',
-    // });
   }
 };
 
 const adminLogin = async (req, res, next) => {
   const { name, password } = req.body;
-  console.log('password', password);
   const admin = await Admin.findOne({ name });
-console.log(admin);
   const validPassword = await bcrypt.compare(password, admin.password);
   if (validPassword) {
     req.session.admin_id = admin._id;
     res.locals.admin = true;
-    console.log('Hello');
     return res.redirect('/admin/requests');
   }
-  res.redirect('/admin/login'); // if we want to login with fetch, we can check if response.ok
+  res.redirect('/'); // if we want to login with fetch, we can check if response.ok
 };
 
 const showReq = async (req, res) => {
