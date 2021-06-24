@@ -1,29 +1,7 @@
-// Закоментировал потому что были ошибки в console
-
-// const telInput = document.getElementById('phone');
-// const errorMsg = document.getElementById('error-msg');
-// const validMsg = document.getElementById('valid-msg');
-
-// telInput.intlTelInput({
-//   utilsScript: 'js/utils.js',
-// });
-
-// // валидация при потере фокуса
-// telInput.blur(() => {
-//   if (trim(telInput.val())) {
-//     if (telInput.intlTelInput('isValidNumber')) {
-//       validMsg.removeClass('hide');
-//     } else {
-//       telInput.addClass('error');
-//       errorMsg.removeClass('hide');
-//       validMsg.addClass('hide');
-//     }
-//   }
-// });
-
-// // сброс при нажатии на клавишу
-// telInput.keydown(() => {
-//   telInput.removeClass('error');
-//   errorMsg.addClass('hide');
-//   validMsg.addClass('hide');
-// });
+const inputElement = document.querySelector('#phone'); // ищем наш единственный input
+inputElement.addEventListener('DOMContentLoaded', () => {
+  const maskOptions = { // создаем объект параметров
+    mask: '+{7}(000)000-00-00', // задаем единственный параметр mask
+  };
+  IMask(inputElement, maskOptions); // запускаем плагин с переданными параметрами
+});

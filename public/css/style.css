@@ -123,7 +123,6 @@ span {
 }
 
 .btnfile {
-  
   width: 180px;
   height: 51px;
   left: 172px;
@@ -135,8 +134,6 @@ span {
   align-items: center;
   text-align: center;
   font-weight: bold;
-
-  /* letter-spacing: 1px; */
 }
 .login {
   display: flex;
@@ -210,15 +207,16 @@ justify-content: center;
 
 .apply {
   /* position: absolute; */
-  width: 435px;
-  height: 100px;
-  left: 172px;
+  /* width: 435px;
+  height: 100px; */
+  /* left: 172px; */
   font-family: RF Rostin;
   font-style: normal;
   /* font-weight: bold; */
-  font-size: 50px;
+  font-size: 46px;
   line-height: 200%;
-  letter-spacing: -0.06em;
+  margin-bottom: 20px;
+  margin-top: 50px;
   color: #4520AB;
   letter-spacing: 2px;
 }
@@ -242,7 +240,7 @@ label {
   display: flex;
   flex-direction: row;
   color: #4520AB;
-  margin-top: 30px;
+  margin-top: 70px;
   font-family: RF Rostin;
 }
 
@@ -309,6 +307,7 @@ label {
   justify-content: center;
   align-items: center;
   text-align: justify;
+  margin-left: 300px;
 }
 
 .coding {
@@ -366,7 +365,7 @@ input::-webkit-input-placeholder {
   margin-right: 20px;
   border: none;
   border-bottom: 1px solid #4520AB;
-  margin: 10px 0;
+  margin: 30px 0 30px 0px;
   height: 30px;
   outline: none;
  
@@ -402,4 +401,8 @@ input::-webkit-input-placeholder {
 }
 .flex-elem {
   border: 5px solid #4520AB;
+}
+
+#project {
+  margin-top: 70px;
 }
