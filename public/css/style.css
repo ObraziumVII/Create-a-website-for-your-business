@@ -2,8 +2,6 @@
   display:flex;
   flex-wrap: wrap;
   position: relative;
-  /* min-height: 100vh;
-  min-width: 100vw; */
   justify-content: center;
   align-items: center;
 }
@@ -17,7 +15,6 @@
   top: 157px;
   font-family: RF Rostin;
   font-style: normal;
-  /* font-weight: bold; */
   font-size: 60px;
   line-height: 112%;
   letter-spacing: -0.04em;
@@ -86,22 +83,34 @@ span {
   margin-left: 0px;
   font-family: RF Rostin;
   font-style: normal;
+  text-decoration: none;
 }
 
 .footer {
+  display: flex;
   width: 100%;
   height: 70px;
   background-color: #4520ab;
   font-family: RF Rostin;
   font-weight: bold;
-  justify-content: center;
+  justify-content:end;
   align-items: center;
   text-align: center;
   margin-top: 70px;
   color: #66eefb;;
   padding-top: 20px;
+  bottom: 0px;
 }
-
+.apply {
+  font-family: RF Rostin;
+  font-style: normal;
+  font-size: 46px;
+  line-height: 200%;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  color: #4520AB;
+  letter-spacing: 2px;
+}
 .circle {
   display: flex;
   left: 15%;
@@ -157,44 +166,26 @@ span {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* margin-left: 300px; */
   font-family: RF Rostin;
   background-color: #4520AB;
 }
 
 #log {
-  /* display: flex; */
-  background: #66eefb;
-  box-shadow: 0px 7px 29px #4520AB;
-  border-radius: 30px;
-  color: #4520AB;
-  width: 180px;
-  height: 51px;
-  left: 172px;
+  margin-right: 10px;
+  color: #66eefb;
   font-family: RF Rostin;
-  /* justify-content: center; */
-  align-items: center;
-  /* text-align: justify; */
   letter-spacing: 1px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
+  text-decoration: none;
 }
 #sign {
-  /* display: flex; */
-  background: #66eefb;
-  box-shadow: 0px 7px 29px #4520AB;
-  border-radius: 30px;
-  color: #4520AB;
+  color: #66eefb;
   font-family: RF Rostin;
-  width: 180px;
-  height: 51px;
-  left: 172px;
-  /* justify-content: center;
-  align-items: center; */
-  text-align: center;
   letter-spacing: 1px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
+  text-decoration: none
 }
 
 #logout {
@@ -221,7 +212,7 @@ span {
   flex-direction: row;
   color: #4520AB;
   margin-top: 20px;
-justify-content: center;
+  justify-content: center;
   align-items: center;
   text-align: center;
 }
@@ -242,15 +233,13 @@ justify-content: center;
 }
 
 
-
 label {
-  /* position: absolute; */
   width: 224px;
   height: 27px;
   left: 174px;
   font-family: RF Rostin;
   font-style: normal;
-  /* font-weight: bold; */
+  
   font-size: 18px;
   line-height: 150%;
   letter-spacing: -0.04em;
@@ -292,48 +281,37 @@ label {
   color: #66eefb;
   height: 100px;
   padding: 7px 7px 7px 7px ;
-  /* margin-left: 100px; */
-  /* width: 900px; */
- /* justify-content: end;
-  align-items: flex-end;
-  text-align: justify; */
   font-family: RF Rostin;
 }
 
 .elbrus {
-  /* display: flex; */
+  display: flex;
   background-color: #66eefb;
   color: #4520AB;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   justify-content: center;
   align-items: center;
   text-align: justify;
   font-family: RF Rostin;
   font-style: normal;
   font-weight: bold;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  /* margin-left: 450px; */
-  /* letter-spacing: -0.1em; */
   letter-spacing: 2px;
 }
 
 .wrapper {
   display: flex;
   flex-direction: row;
-  margin-top: 5px;
   font-family: RF Rostin;
   font-style: normal;
   font-weight: bold;
   justify-content: center;
   align-items: center;
   text-align: justify;
-  /* margin-left: 220px; */
 }
 
 .coding {
-  /* display: flex; */
+  display: flex;
   margin-left: 15px;
   justify-content: center;
   align-items: center;
@@ -341,7 +319,7 @@ label {
   font-family: RF Rostin;
   font-style: normal;
   font-weight: bold;
-  /* letter-spacing: -0.01em; */
+  
   letter-spacing: 1px;
 }
 
