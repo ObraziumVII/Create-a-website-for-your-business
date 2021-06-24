@@ -1,18 +1,81 @@
 <script defer src='/js/oneReq.js'></script>
 <br>
 <br>
-<div class="flex-cont">
-  <div id='reqCard' class="flex-elem">
-      <span class="card-title">Контактные данные</span>
-      <p>{{request.name}}</p>
-      <p>{{request.companyName}}</p>
-      <p>{{request.phone}}</p>
-      <p>{{request.email}}</p>
-      <p>{{request.description}}</p>
-      <div><img src='{{request.img}}' alt="Здесь должна быть картинка"></div>
-      <p>{{request.adminComment}}</p>
-      <p>{{request.status}}</p>
-      <button class='editBtn' id='http://localhost:3000/admin/request/{{request._id}}/edit'>Сменить статус</button>
+<div class='reqCont'>
+  <div class="flex-cont">
+    <div id='reqCard' class="flex-elem">
+        <span class="card-title">Контактные данные</span>
+        <p>{{request.name}}</p>
+        <p>{{request.companyName}}</p>
+        <p>{{request.phone}}</p>
+        <p>{{request.email}}</p>
+        <p>{{request.description}}</p>
+        <div><img src='{{request.img}}' alt="Здесь должна быть картинка"></div>
+        <p>{{request.adminComment}}</p>
+        <p>{{request.status}}</p>
+        <button class='editBtn'>Сменить статус</button>
+    </div>
+  </div>
+
+  <div class="row editHidden" >
+    <form class="col s8 offset-s8" name="editRequest" action="/admin/requests/{{id}}"  method="POST" id='editForm'>
+
+      <div class="cont">
+
+        <div class="login-container">
+          {{#if message}}
+          <h1 class='erorMessage'>{{message}}</h1>
+          {{/if}}
+          <input type="text" class="validate" name="adminComment" id='adminCom'>
+          <label for="adminComment">Комментарий</label>
+          <br>
+          <br>
+          <select id="select" name="selectName">
+            <option value="" disabled selected>Статус заявки</option>
+            <option value="Открыта">Открыта</option>
+            <option value="В работе">В работе</option>
+            <option value="Отменена">Отменена</option>
+            <option value="Выволнена">Выволнена</option>
+          </select>
+          <br>
+          <br>
+
+          {{!-- <p>
+            <label>
+              <input type="checkbox" value = "В обработке" name="status" />
+              <span>В обработке</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" value = "Обработана неудачно" name="status" />
+              <span>Обработана неудачно</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" value = "В процессе разработки студентами" name="status" />
+              <span>В процессе разработки студентами</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" value = "Выполнено успешно" name="status" />
+              <span>Выполнено успешно</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" value = "Заказчик высказал претензии" name="status" />
+              <span>Заказчик высказал претензии</span>
+            </label>
+          </p> --}}
+        </div>
+        <button class="editFormBtn" id={{request._id}} >Выполнить!</button>
+      </div>
+
+
+    </form>
   </div>
 </div>
 

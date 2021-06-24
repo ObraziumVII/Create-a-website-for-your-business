@@ -494,4 +494,12 @@ label {
   text-align: center;
   font-weight: bold;
 }
-
+.reqCont {
+  display: inline-flex;
+}
+.editHidden {
+  visibility: hidden;
+}
+.editVisible {
+  visibility: visible;
+}
