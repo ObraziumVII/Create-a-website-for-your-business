@@ -1,41 +1,29 @@
-const telInput = document.getElementById('phone');
-const errorMsg = document.getElementById('error-msg');
-const validMsg = document.getElementById('valid-msg');
+// Закоментировал потому что были ошибки в console
 
-telInput.intlTelInput({
-  utilsScript: 'js/utils.js',
-});
+// const telInput = document.getElementById('phone');
+// const errorMsg = document.getElementById('error-msg');
+// const validMsg = document.getElementById('valid-msg');
 
-// валидация при потере фокуса
-telInput.blur(() => {
-  if (trim(telInput.val())) {
-    if (telInput.intlTelInput('isValidNumber')) {
-      validMsg.removeClass('hide');
-    } else {
-      telInput.addClass('error');
-      errorMsg.removeClass('hide');
-      validMsg.addClass('hide');
-    }
-  }
-});
+// telInput.intlTelInput({
+//   utilsScript: 'js/utils.js',
+// });
 
-// сброс при нажатии на клавишу
-telInput.keydown(() => {
-  telInput.removeClass('error');
-  errorMsg.addClass('hide');
-  validMsg.addClass('hide');
-});
-const submitButton = document.querySelector('#submitButton');
-const password = document.getElementById('password');
-const repeatPassword = document.getElementById('passwordRepeat');
-const passwordError = document.getElementById('passwordError');
-if (submitButton) {
-  console.log('submotButton', submitButton);
-  submitButton.addEventListener('click', (event) => {
-    console.log('password', password);
-    if (password.value !== repeatPassword.value) {
-      event.preventDefault();
-      passwordError.hidden = false;
-    }
-  });
-};
+// // валидация при потере фокуса
+// telInput.blur(() => {
+//   if (trim(telInput.val())) {
+//     if (telInput.intlTelInput('isValidNumber')) {
+//       validMsg.removeClass('hide');
+//     } else {
+//       telInput.addClass('error');
+//       errorMsg.removeClass('hide');
+//       validMsg.addClass('hide');
+//     }
+//   }
+// });
+
+// // сброс при нажатии на клавишу
+// telInput.keydown(() => {
+//   telInput.removeClass('error');
+//   errorMsg.addClass('hide');
+//   validMsg.addClass('hide');
+// });
