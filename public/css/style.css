@@ -410,6 +410,9 @@ input::-webkit-input-placeholder {
 
 .searchBar {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline
 }
 
 .barSearch {
