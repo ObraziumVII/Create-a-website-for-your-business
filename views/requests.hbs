@@ -4,7 +4,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><h3>{{admin}}</h3></li>
         {{!-- <li><a href="badges.html">Components</a></li> --}}
-        <li><a href='/admin/logout'>Выйти</a></li>
+       
       </ul>
     </div>
 </nav> --}}
@@ -15,19 +15,16 @@
 </div> --}}
 <script defer src='/js/request.js'></script>
 <div class='searchBar'>
-  <div>
+    <div class='zayavki'>Заявки</div>
     <form method='post' action='/admin/requests' name='inputForm'>
       <input id="search-input" name="search" type="text" placeholder="поиск">
-      <button>🔎</button>
+      <button class='loop'>🔎</button>
     </form>
-    <ul>
-      <li><a href="/admin/requests">Все заявки</a></li>
-      <li><a href="/admin/requests?status=открыта">Открыта</a></li>
-      <li><a href="/admin/requests?status=в%работе">В работе</a></li>
-      <li><a href="/admin/requests?status=отменена">Отменена</a></li>
-      <li><a href="/admin/requests?status=выполнена">Выполнена</a></li>
-    </ul>
-  </div>
+      <a href="/admin/requests"><button class='barSearch'>Все заявки</button></a>
+      <a href="/admin/requests?status=открыта"><button class='barSearch'>Открыта</button></a>
+      <a href="/admin/requests?status=в%работе"><button class='barSearch'>В работе</button></a>
+      <a href="/admin/requests?status=отменена"><button class='barSearch'>Отменена</button></a>
+      <a href="/admin/requests?status=выполнена"><button class='barSearch'>Выполнена</button></a>
 </div>
 
 <div class='requests'>
