@@ -10,19 +10,19 @@
     
 </head>
 <nav class="navbar">
-  <div class="wrapper">
+  <div class="wrapper" >
     <div class="elbrus"> E L B R <br> U S / <br> B O O T <br> C A M P </div>
     <div class="coding">E l b r u s <br>c o d i n g<br> b o o t c a m p</div>
   </div>
   {{#if admin}}
   <div class="login">
     <h3>{{adminName}}</h3>
-    <a id="logout" href="/admin/logout"><button>Logout</button></a>
+    <a id="logout" href="/admin/logout">Logout</a>
   </div>
   {{else}}
   <div class="login">
-    <a href="/admin/login"><button id="log">Login</button></a>
-    <a href="/admin/signup"><button id="sign">Signup</button></a>
+    <a href="/admin/login" id="log">Login</a>
+    <a id="sign" href="/admin/signup">Signup</a>
   </div>
   {{/if}}
 </nav>
@@ -31,6 +31,7 @@
   {{{body}}}
 
 </div>
+
 <footer class="footer">
   <div> 2021 </div>
 </footer>

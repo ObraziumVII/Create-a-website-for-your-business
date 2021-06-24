@@ -78,7 +78,7 @@ const updReq = async (req, res) => {
   } catch (error) {
     console.log('не вышло');
   }
-  res.render(`admin/request`, { layout: false });
+  res.render(`admin/request`, { request, layout: false });
 };
 const search = async (req, res) => {
   let { search } = req.body;
