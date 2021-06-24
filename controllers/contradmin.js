@@ -1,5 +1,6 @@
 require('dotenv').config();
 const bcrypt = require('bcrypt');
+const e = require('express');
 const Admin = require('../db/models/adminModel');
 const Request = require('../db/models/requestModel');
 // const nodemailer = require("nodemailer");
@@ -44,15 +45,19 @@ const adminSignup = async (req, res, next) => {
 
 const adminLogin = async (req, res, next) => {
   const { name, password } = req.body;
-  const admin = await Admin.findOne({ name });
-  const validPassword = await bcrypt.compare(password, admin.password);
-  if (validPassword) {
-    req.session.admin_id = admin._id;
-    req.session.adminName = admin.name;
-    res.locals.admin = true;
-    return res.redirect('/admin/requests');
+  if (!password || !name) {
+    res.redirect('/');
+  } else {
+    const admin = await Admin.findOne({ name });
+    const validPassword = await bcrypt.compare(password, admin.password);
+    if (validPassword) {
+      req.session.admin_id = admin._id;
+      req.session.adminName = admin.name;
+      res.locals.admin = true;
+      return res.redirect('/admin/requests');
+    }
+    res.redirect('/'); // if we want to login with fetch, we can check if response.ok
   }
-  res.redirect('/'); // if we want to login with fetch, we can check if response.ok
 };
 
 const showReq = async (req, res) => {
@@ -73,12 +78,13 @@ const updReq = async (req, res) => {
   const _id = req.body._id;
   console.log('Зашел в ручку');
   try {
-    console.log(req.body);
-    request = await Request.findByIdAndUpdate(req.params.idreq, { adminComment: req.body.adminComment, status: req.body.status });
+    // console.log(req.body);
+    await Request.findByIdAndUpdate(req.params.idreq, { adminComment: req.body.adminComment, status: req.body.status });
+    request = await Request.findById(req.params.idreq);
   } catch (error) {
     console.log('не вышло');
   }
-  res.render(`admin/request`, { request, layout: false });
+  res.render(`admin/request`, { request });
 };
 const search = async (req, res) => {
   let { search } = req.body;

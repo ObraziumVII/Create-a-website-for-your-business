@@ -18,7 +18,7 @@
   </div>
 
   <div class="row editHidden" >
-    <form class="col s8 offset-s8" name="editRequest" action="/admin/requests/{{id}}"  method="POST" id='editForm'>
+    <form class="col s8 offset-s8 editForm" name="editRequest" action="/admin/requests/{{id}}"  method="POST" id={{request._id}}>
 
       <div class="cont">
 
@@ -26,6 +26,7 @@
           {{#if message}}
           <h1 class='erorMessage'>{{message}}</h1>
           {{/if}}
+         <form method='post' action='/admin/requests/{{request._id}}' name='editForm' id='editForm'>
           <input type="text" class="validate" name="adminComment" id='adminCom'>
           <label for="adminComment">Комментарий</label>
           <br>
@@ -39,8 +40,9 @@
           </select>
           <br>
           <br>
-        </div>
         <button class="editFormBtn" id={{request._id}} >Выполнить!</button>
+        </form>
+        </div>
       </div>
 
 
