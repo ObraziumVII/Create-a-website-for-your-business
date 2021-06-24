@@ -48,6 +48,7 @@ const adminLogin = async (req, res, next) => {
   const validPassword = await bcrypt.compare(password, admin.password);
   if (validPassword) {
     req.session.admin_id = admin._id;
+    req.session.adminName = admin.name;
     res.locals.admin = true;
     return res.redirect('/admin/requests');
   }
@@ -83,58 +84,60 @@ const search = async (req, res) => {
   let flag = false;
 
   const requests = await Request.find();
-  let validArrNames = [];
-  let validArrCompany = [];
-  let validArrPhones = [];
-  let validArrEmail = [];
-  let validArrDescr = [];
-  let validArrCom = [];
-  //поиск по имени
-  for (let i =0; i <requests.length; i++) {
-    if (requests[i].name.toLowerCase().includes(search)){
+  const validArrNames = [];
+  const validArrCompany = [];
+  const validArrPhones = [];
+  const validArrEmail = [];
+  const validArrDescr = [];
+  const validArrCom = [];
+  // поиск по имени
+  for (let i = 0; i < requests.length; i++) {
+    if (requests[i].name.toLowerCase().includes(search)) {
       validArrNames.push(requests[i]);
       flag = true;
     }
   }
   // поиск по компании
-  for (let i =0; i <requests.length; i++) {
-    if (search == requests[i].companyName.toLowerCase()){
+  for (let i = 0; i < requests.length; i++) {
+    if (search == requests[i].companyName.toLowerCase()) {
       validArrCompany.push(requests[i]);
       flag = true;
     }
   }
   // поиск по номеру телефона
-  for (let i =0; i <requests.length; i++) {
-    if (search == requests[i].phone.toLowerCase()){
+  for (let i = 0; i < requests.length; i++) {
+    if (search == requests[i].phone.toLowerCase()) {
       validArrPhones.push(requests[i]);
       flag = true;
     }
   }
   // поиск по номеру email
-  for (let i =0; i <requests.length; i++) {
-    if (search == requests[i].email.toLowerCase()){
+  for (let i = 0; i < requests.length; i++) {
+    if (search == requests[i].email.toLowerCase()) {
       validArrEmail.push(requests[i]);
       flag = true;
     }
   }
   // поиск по совпадению в описании
-  for (let i =0; i <requests.length; i++) {
-    if (requests[i].description.toLowerCase().includes(search)){
+  for (let i = 0; i < requests.length; i++) {
+    if (requests[i].description.toLowerCase().includes(search)) {
       validArrDescr.push(requests[i]);
       flag = true;
     }
   }
-  for (let i =0; i <requests.length; i++) {
-    if (requests[i].adminComment){
-      if (requests[i].adminComment.toLowerCase().includes(search)){
+  for (let i = 0; i < requests.length; i++) {
+    if (requests[i].adminComment) {
+      if (requests[i].adminComment.toLowerCase().includes(search)) {
         validArrCom.push(requests[i]);
         flag = true;
       }
     }
   }
 
-  res.render('search', { admin: 'eeee', flag, validArrNames, validArrCompany, validArrPhones, validArrEmail, validArrDescr, validArrCom, layout: false });
-}
+  res.render('search', {
+    flag, validArrNames, validArrCompany, validArrPhones, validArrEmail, validArrDescr, validArrCom, layout: false,
+  });
+};
 
 module.exports = {
   adminLogin, adminSignup, showReq, editReq, updReq, search,
