@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/apply', async (req, res) => {
-  console.log('Hello');
+  // console.log('Hello');
   try {
     const {
       name, companyName, phone, email, description, img, link,
@@ -25,6 +25,8 @@ router.post('/apply', async (req, res) => {
       error: {},
     });
   }
+  
+  res.send('База данных пополнена');
 });
 
 module.exports = router;
