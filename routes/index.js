@@ -25,7 +25,8 @@ router.post('/apply', async (req, res) => {
       error: {},
     });
   }
-  // res.send('База данных пополнена');
+  
+  res.send('База данных пополнена');
 });
 
 module.exports = router;

@@ -33,4 +33,11 @@ sendForm.addEventListener('submit', async (event) => {
     }),
   });
   window.alert('Ваша заявка принята!');
+  inputName.value = '';
+  inputCompany.value = '';
+  inputPhone.value = '';
+  inputEmail.value = '';
+  inputDecription.value = '';
+  inputImg.value = '';
+  inputLink.value = '';
 });

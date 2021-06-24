@@ -142,6 +142,7 @@ span {
   align-items: flex-end;
   margin-left: 300px;
   font-family: RF Rostin;
+  background-color: #4520AB;
 }
 
 #log {
@@ -307,7 +308,7 @@ label {
   justify-content: center;
   align-items: center;
   text-align: justify;
-  margin-left: 300px;
+  margin-left: 220px;
 }
 
 .coding {
