@@ -91,7 +91,7 @@ const search = async (req, res) => {
   let validArrCom = [];
   //поиск по имени
   for (let i =0; i <requests.length; i++) {
-    if (search == requests[i].name.toLowerCase()){
+    if (requests[i].name.toLowerCase().includes(search)){
       validArrNames.push(requests[i]);
       flag = true;
     }
