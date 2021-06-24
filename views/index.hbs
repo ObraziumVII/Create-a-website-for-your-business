@@ -1,5 +1,5 @@
+<script defer src="/js/indexApply.js"></script>
 <div class="main">
-  
   <div class="top">
     <div id="top">
       <div class="mvp">Создайте<br> MVP своего продукта <br><span>бесплатно</span></div>
@@ -30,7 +30,7 @@
     </div>
   </div>
   <h2 class="apply" id='apply'>Заполните заявку</h2>
-  <form action="/" method="POST">
+  <form action="/" id="sendForm" method="POST">
     <label>Контактные данные</label>
     <div class="inputName">
       <input name="name" class="input" placeholder="Имя" required>
@@ -38,7 +38,6 @@
     </div>
     <div class="">
       <input name="phone" id="phone" type="tel" class="input" placeholder="Ваш телефон" required>
-    
       <input name="email" class="input" placeholder="Ваш email" required>
     </div>
     <div id="project">
@@ -52,7 +51,7 @@
       <input name="link" class="link" placeholder="Прикрепить ссылку">
     </div>
     <div class="bottom">
-      <button class="sendForm">ОТПРАВИТЬ ЗАЯВКУ</button>
+      <button class="sendForm" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
       <div class="bottomtext">Нажимая на кнопку, вы даете согласие на обработку <br>персональных данных и соглашаетесь с политикой
       <br>конфиденциальности</div>
     </div>
