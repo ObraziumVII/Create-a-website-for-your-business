@@ -1,17 +1,18 @@
+<script defer src='/js/oneReq.js'></script>
 <br>
 <br>
-<div class="row">
-  <div class="flex-cont">
-    <div class="flex-elem">
-        <span class="card-title">Контактные данные</span>
-        <p>{{request.name}}</p>
-        <p>{{request.companyName}}</p>
-        <p>{{request.phone}}</p>
-        <p>{{request.email}}</p>
-        <p>{{request.description}}</p>
-        <div><img src='{{request.img}}' alt="Здесь должна быть картинка"></div>
-        <p>{{request.adminComment}}</p>
-        <p>{{request.status}}</p>
-    </div>
+<div class="flex-cont">
+  <div id='reqCard' class="flex-elem">
+      <span class="card-title">Контактные данные</span>
+      <p>{{request.name}}</p>
+      <p>{{request.companyName}}</p>
+      <p>{{request.phone}}</p>
+      <p>{{request.email}}</p>
+      <p>{{request.description}}</p>
+      <div><img src='{{request.img}}' alt="Здесь должна быть картинка"></div>
+      <p>{{request.adminComment}}</p>
+      <p>{{request.status}}</p>
+      <button class='editBtn' id='http://localhost:3000/admin/request/{{request._id}}/edit'>Сменить статус</button>
   </div>
 </div>
+

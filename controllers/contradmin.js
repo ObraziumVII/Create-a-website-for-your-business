@@ -66,7 +66,9 @@ const editReq = async (req, res) => {
   id = req.params.idreq;
   const request = await Request.findOne({ _id: id });
   console.log(request._id);
-  res.render('admin/editForm', { id: request._id });
+  console.log('Зашел в ручку');
+  // res.render('admin/editForm', { id: request._id });
+  res.render('admin/editForm', { layout: false });
 };
 const updReq = async (req, res) => {
   let request = await Request.findById(req.params.idreq);
