@@ -1,44 +1,43 @@
 const sendForm = document.querySelector('#sendForm');
+const inputName = document.querySelector('#inputName');
+const inputCompany = document.querySelector('#inputCompany');
+const inputPhone = document.querySelector('#inputPhone');
+const inputEmail = document.querySelector('#inputEmail');
+const inputDecription = document.querySelector('#inputDecription');
+const inputImg = document.querySelector('#inputImg');
+const inputLink = document.querySelector('#inputLink');
 
 sendForm.addEventListener('submit', async (event) => {
   event.preventDefault();
-  console.log(event);
-  const name = event.target.name.value;
-  const companyName = event.target.companyName.value;
-  const phone = event.target.phone.value;
-  const email = event.target.email.value;
-  const description = event.target.description.value;
-  const img = event.target.img.value;
-  const link = event.target.link.value;
+  const name = inputName.value;
+  const companyName = inputCompany.value;
+  const phone = inputPhone.value;
+  const email = inputEmail.value;
+  const description = inputDecription.value;
+  const img = inputImg.value;
+  const link = inputLink.value;
 
   const response = await fetch('/apply', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    // body: JSON.stringify({
-    //   name,
-    //   companyName,
-    //   phone,
-    //   email,
-    //   description,
-    //   img,
-    //   link,
-    // }),
-
+    body: JSON.stringify({
+      name,
+      companyName,
+      phone,
+      email,
+      description,
+      img,
+      link,
+    }),
   });
-
-  // const res = await response.json();
-  // if (res) {
-  //   alert('Ваша заявка принята!11111111');
-  // } else {
-  //   alert('Заполните все поля');
-  // }
-  // if (response.status === 200) {
-  //   alert('Ваша заявка принята!11111111');
-  // } else {
-  //   alert('Заполните все поля');
-  // }
-
-  window.alert('Ваша заявка принята!11111111');
+  window.alert('Ваша заявка принята!');
+  inputName.value = '';
+  inputCompany.value = '';
+  inputPhone.value = '';
+  inputEmail.value = '';
+  inputDecription.value = '';
+  inputImg.value = '';
+  inputLink.value = '';
 });
