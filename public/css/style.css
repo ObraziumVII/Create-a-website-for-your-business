@@ -1,5 +1,6 @@
 #body {
   display:flex;
+  flex-wrap: wrap;
   position: relative;
   /* min-height: 100vh;
   min-width: 100vw; */
@@ -156,7 +157,7 @@ span {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-left: 300px;
+  /* margin-left: 300px; */
   font-family: RF Rostin;
   background-color: #4520AB;
 }
@@ -313,7 +314,7 @@ label {
   font-weight: bold;
   margin-bottom: 5px;
   margin-top: 5px;
-  margin-left: 450px;
+  /* margin-left: 450px; */
   /* letter-spacing: -0.1em; */
   letter-spacing: 2px;
 }
@@ -328,7 +329,7 @@ label {
   justify-content: center;
   align-items: center;
   text-align: justify;
-  margin-left: 220px;
+  /* margin-left: 220px; */
 }
 
 .coding {
@@ -443,12 +444,12 @@ label {
   border-radius: 30px;
   color: #4520AB;
   font-family: RF Rostin;
-  /* justify-content: center;
-  align-items: center; */
-  text-align: justify;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-top: 20px;
   text-align: center;
-  font-weight: bold;
 
 
   outline: none;
@@ -491,6 +492,7 @@ label {
 }
 
 .zayavki {
+  margin-right: 30px;
   color: #4520AB;
   text-align: justify;
   margin-top: 20px;
@@ -498,3 +500,15 @@ label {
   font-weight: bold;
 }
 
+.adminName {
+  margin-right: 20px;
+}
+
+.loginPlease {
+  color: #4520AB;
+ 
+}
+
+.test1 {
+  display: flex;
+}
