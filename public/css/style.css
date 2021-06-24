@@ -1,8 +1,7 @@
 #body {
   display:flex;
+  flex-wrap: wrap;
   position: relative;
-  /* min-height: 100vh;
-  min-width: 100vw; */
   justify-content: center;
   align-items: center;
 }
@@ -16,7 +15,6 @@
   top: 157px;
   font-family: RF Rostin;
   font-style: normal;
-  /* font-weight: bold; */
   font-size: 60px;
   line-height: 112%;
   letter-spacing: -0.04em;
@@ -101,10 +99,18 @@ span {
   margin-top: 70px;
   color: #66eefb;;
   padding-top: 20px;
-  position: fixed;
-  top: 87%;
+  bottom: 0px;
 }
-
+.apply {
+  font-family: RF Rostin;
+  font-style: normal;
+  font-size: 46px;
+  line-height: 200%;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  color: #4520AB;
+  letter-spacing: 2px;
+}
 .circle {
   display: flex;
   left: 15%;
@@ -160,7 +166,6 @@ span {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-left: 300px;
   font-family: RF Rostin;
   background-color: #4520AB;
 }
@@ -207,7 +212,7 @@ span {
   flex-direction: row;
   color: #4520AB;
   margin-top: 20px;
-justify-content: center;
+  justify-content: center;
   align-items: center;
   text-align: center;
 }
@@ -228,15 +233,13 @@ justify-content: center;
 }
 
 
-
 label {
-  /* position: absolute; */
   width: 224px;
   height: 27px;
   left: 174px;
   font-family: RF Rostin;
   font-style: normal;
-  /* font-weight: bold; */
+  
   font-size: 18px;
   line-height: 150%;
   letter-spacing: -0.04em;
@@ -278,11 +281,6 @@ label {
   color: #66eefb;
   height: 100px;
   padding: 7px 7px 7px 7px ;
-  /* margin-left: 100px; */
-  /* width: 900px; */
- /* justify-content: end;
-  align-items: flex-end;
-  text-align: justify; */
   font-family: RF Rostin;
 }
 
@@ -298,25 +296,18 @@ label {
   font-family: RF Rostin;
   font-style: normal;
   font-weight: bold;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-left: 450px;
-  letter-spacing: -0.1em;
-  letter-spacing: 1px;
-  padding: 3px;
+  letter-spacing: 2px;
 }
 
 .wrapper {
   display: flex;
   flex-direction: row;
-  margin-top: 5px;
   font-family: RF Rostin;
   font-style: normal;
   font-weight: bold;
   justify-content: center;
   align-items: center;
   text-align: justify;
-  margin-left: 220px;
 }
 
 .coding {
@@ -328,7 +319,7 @@ label {
   font-family: RF Rostin;
   font-style: normal;
   font-weight: bold;
-  /* letter-spacing: -0.01em; */
+  
   letter-spacing: 1px;
 }
 
@@ -416,6 +407,9 @@ label {
 
 .searchBar {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline
 }
 
 .barSearch {
@@ -428,12 +422,12 @@ label {
   border-radius: 30px;
   color: #4520AB;
   font-family: RF Rostin;
-  /* justify-content: center;
-  align-items: center; */
-  text-align: justify;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-top: 20px;
   text-align: center;
-  font-weight: bold;
 
 
   outline: none;
@@ -476,6 +470,7 @@ label {
 }
 
 .zayavki {
+  margin-right: 30px;
   color: #4520AB;
   text-align: justify;
   margin-top: 20px;
@@ -483,3 +478,15 @@ label {
   font-weight: bold;
 }
 
+.adminName {
+  margin-right: 20px;
+}
+
+.loginPlease {
+  color: #4520AB;
+ 
+}
+
+.test1 {
+  display: flex;
+}
