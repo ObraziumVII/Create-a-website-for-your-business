@@ -41,3 +41,26 @@ sendForm.addEventListener('submit', async (event) => {
   inputImg.value = '';
   inputLink.value = '';
 });
+
+// cvar element = document.getElementById('phone');
+const maskOptions = {
+  mask: '+7(000)000-00-00',
+  lazy: false,
+};
+const mask = new IMask(inputPhone, maskOptions);
+
+// const element2 = document.getElementById('email');
+// const maskOptions2 = {
+//   mask(value) {
+//     if (/^[a-z0-9_\.-]+$/.test(value)) return true;
+//     if (/^[a-z0-9_\.-]+@$/.test(value)) return true;
+//     if (/^[a-z0-9_\.-]+@[a-z0-9-]+$/.test(value)) return true;
+//     if (/^[a-z0-9_\.-]+@[a-z0-9-]+\.$/.test(value)) return true;
+//     if (/^[a-z0-9_\.-]+@[a-z0-9-]+\.[a-z]{1,4}$/.test(value)) return true;
+//     if (/^[a-z0-9_\.-]+@[a-z0-9-]+\.[a-z]{1,4}\.$/.test(value)) return true;
+//     if (/^[a-z0-9_\.-]+@[a-z0-9-]+\.[a-z]{1,4}\.[a-z]{1,4}$/.test(value)) return true;
+//     return false;
+//   },
+//   lazy: false,
+// };
+// const mask2 = new IMask(inputEmail, maskOptions2);
