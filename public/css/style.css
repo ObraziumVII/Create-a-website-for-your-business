@@ -31,9 +31,20 @@ span {
   color:#FFBC5B;
   font-family: RF Rostin;
 }
+.div {
+  display: flex;
+  flex-direction: row;
+}
+.top {
+  display: flex;
+  justify-content: flex-start;
+}
 #top{
+  display: flex;
+  flex-direction: column;
   margin-left: 0px;
   font-family: RF Rostin;
+  justify-content: flex-end;
 }
 .product {
   display: flex;
@@ -54,22 +65,26 @@ span {
   letter-spacing: 2px;
 }
 
+
 .btnmvp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 247px;
   height: 51px;
   left: 172px;
   top: 463px;
   background: #FFBC5B;
-  box-shadow: 0px 7px 29px rgba(255, 188, 91, 0.37);
   border-radius: 30px;
+  border: none;
   color: #4520AB;
   font-family: RF Rostin;
-  /* justify-content: center;
-  align-items: center; */
-  text-align: justify;
   margin-top: 20px;
   text-align: center;
-  font-weight: bold;
+  font-size: 18px;
+  margin-left: 0px;
+  font-family: RF Rostin;
+  font-style: normal;
 }
 
 .footer {
@@ -133,20 +148,21 @@ span {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-weight: bold;
+  border: none;
+  font-size: 16px;
 }
 .login {
   display: flex;
   flex-direction: row;
-  justify-content:end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   margin-left: 300px;
   font-family: RF Rostin;
   background-color: #4520AB;
 }
 
 #log {
-  display: flex;
+  /* display: flex; */
   background: #66eefb;
   box-shadow: 0px 7px 29px #4520AB;
   border-radius: 30px;
@@ -155,14 +171,32 @@ span {
   height: 51px;
   left: 172px;
   font-family: RF Rostin;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  text-align: justify;
+  /* text-align: justify; */
   letter-spacing: 1px;
   font-weight: bold;
   font-size: 18px;
 }
 #sign {
+  /* display: flex; */
+  background: #66eefb;
+  box-shadow: 0px 7px 29px #4520AB;
+  border-radius: 30px;
+  color: #4520AB;
+  font-family: RF Rostin;
+  width: 180px;
+  height: 51px;
+  left: 172px;
+  /* justify-content: center;
+  align-items: center; */
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#logout {
   display: flex;
   background: #66eefb;
   box-shadow: 0px 7px 29px #4520AB;
@@ -206,21 +240,7 @@ justify-content: center;
   margin-top: 10px;
 }
 
-.apply {
-  /* position: absolute; */
-  /* width: 435px;
-  height: 100px; */
-  /* left: 172px; */
-  font-family: RF Rostin;
-  font-style: normal;
-  /* font-weight: bold; */
-  font-size: 46px;
-  line-height: 200%;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  color: #4520AB;
-  letter-spacing: 2px;
-}
+
 
 label {
   /* position: absolute; */
@@ -246,7 +266,6 @@ label {
 }
 
  .sendForm {
-  /* position: absolute; */
   width: 247px;
   height: 51px;
   left: 172px;
@@ -254,8 +273,9 @@ label {
   box-shadow: 0px 7px 29px rgba(255, 188, 91, 0.37);
   border-radius: 30px;
   color: #4520AB;
-  font-weight: bold;
   font-family: RF Rostin;
+  border: none;
+  font-size: 16px;
 }
 .bottomtext {
   margin-left: 20px;
@@ -280,7 +300,7 @@ label {
 }
 
 .elbrus {
-  display: flex;
+  /* display: flex; */
   background-color: #66eefb;
   color: #4520AB;
   width: 90px;
@@ -312,7 +332,7 @@ label {
 }
 
 .coding {
-  display: flex;
+  /* display: flex; */
   margin-left: 15px;
   justify-content: center;
   align-items: center;
@@ -347,10 +367,8 @@ label {
   text-align: justify;
 }
 
-input::-webkit-input-placeholder {
-  color: #a6a96d 50%;
-}
- 
+::-webkit-input-placeholder {color:#4e349685}
+
 
 .inputdecription {
   width: 500px;
