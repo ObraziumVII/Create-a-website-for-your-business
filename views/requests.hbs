@@ -32,6 +32,7 @@
 
 <div class='requests'>
   <table class="highlight">
+    <thead>
     <tr>
      <th>Дата</th>
      <th>Имя</th>
@@ -44,7 +45,8 @@
      <th>Найдено по:</th>
      {{/if}}
     </tr>
-    <div class='allRequests'>
+    </thead>
+    <tbody class='allRequests'>
       {{#each request}}
       <tr class='tr' id='{{this._id}}'> 
         <td class='td'>{{this.createdAt}}</td>
@@ -128,7 +130,7 @@
         <td class='td'>комментарию админа</td>
       </tr>
       {{/each}}
-    </div>
+    </tbody>
   </table>
 </div>
 
