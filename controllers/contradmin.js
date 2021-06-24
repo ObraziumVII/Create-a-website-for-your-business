@@ -133,7 +133,7 @@ const search = async (req, res) => {
     }
   }
 
-  res.render('requests', { admin: 'eeee', flag, validArrNames, validArrCompany, validArrPhones, validArrEmail, validArrDescr, validArrCom });
+  res.render('search', { admin: 'eeee', flag, validArrNames, validArrCompany, validArrPhones, validArrEmail, validArrDescr, validArrCom, layout: false });
 }
 
 module.exports = {
