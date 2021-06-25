@@ -1,22 +1,23 @@
 <script defer src="/js/indexApply.js"></script>
 <script src="https://unpkg.com/imask"></script>
-<script src="path/to/intlTelInput.js"></script>
+
 
 <div class="main">
   <div class="div">
-  <div class="top">
-    <div id="top">
-      <div class="mvp">Создайте<br> MVP своего продукта <br><span>бесплатно</span></div>
-      <a href='#apply'class="btnmvp">СОЗДАТЬ</a>
+    <div class="top">
+      <div id="top">
+        <div class="mvp">Создайте<br> MVP своего продукта <br><span>бесплатно</span></div>
+        <a href='#apply' class="btnmvp">СОЗДАТЬ</a>
+      </div>
     </div>
-  </div>
     <div>
       <img src="img/image 1.png">
     </div>
-</div>
-  <div class="product">MVP (Minimal Viable Product, минимально жизнеспособный продукт) — тестовая <br> версия  товара,  услуги
-    или  сервиса  с  минимальным  набором  функций. MVP  создают <br>для  тестирования  гипотез  и  проверки  жизнеспособности
-    задуманного  продукта.</div>
+  </div>
+  <div class="product">MVP (Minimal Viable Product, минимально жизнеспособный продукт) — тестовая <br> версия товара,
+    услуги
+    или сервиса с минимальным набором функций. MVP создают <br>для тестирования гипотез и проверки жизнеспособности
+    задуманного продукта.</div>
   <div class="row">
     <div class="one">
       <div class="circle">1</div>
@@ -45,22 +46,26 @@
       <input name="email" id="inputEmail" class="input" placeholder="Ваш email" required>
     </div>
     <div id="project">
-      <label >Ваш проект</label>
+      <label>Ваш проект</label>
     </div>
     <div>
-      <input name="description" id="inputDecription" class="inputdecription" placeholder="Пожалуйста, максимально подробно опишите свою идею, проект">
+      <input name="description" id="inputDecription" class="inputdecription"
+        placeholder="Пожалуйста, максимально подробно опишите свою идею, проект">
     </div>
     <div id="link">
-      {{!-- <button name="img" id="inputImg" class="btnfile">ЗАГРУЗИТЬ ФАЙЛ</button> --}}
-      <input type="file" name="img" id="inputImg" class="btnfile" placeholder="ЗАГРУЗИТЬ ФАЙЛ">
+      <div class="example-2">
+          <input type="file" name="file" id="file" class="btnfile input-file" >
+          <label for="file" class="btn btn-tertiary js-labelFile">
+            <span class="js-fileName">ЗАГРУЗИТЬ ФАЙЛ</span>
+            </label>
+      </div>
       <input name="link" id="inputLink" class="link" placeholder="Прикрепить ссылку">
     </div>
     <div class="bottom">
       <button class="sendForm" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
-      <div class="bottomtext">Нажимая на кнопку, вы даете согласие на обработку <br>персональных данных и соглашаетесь с политикой
-      <br>конфиденциальности</div>
+      <div class="bottomtext">Нажимая на кнопку, вы даете согласие на обработку <br>персональных данных и соглашаетесь с
+        политикой<br>конфиденциальности
+      </div>
     </div>
 </div>
 </form>
-
-

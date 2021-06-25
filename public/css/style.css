@@ -36,7 +36,7 @@ body {
   text-align: justify;
   letter-spacing: 1px;
 }
-span {
+.span {
   color:#FFBC5B;
   font-family: RF Rostin;
 }
@@ -111,6 +111,7 @@ span {
   /* position: absolute */
   margin-top: auto;
   bottom: 0px;
+  mar
 }
 
 .apply {
@@ -159,20 +160,6 @@ span {
   font-family: RF Rostin;
 }
 
-.btnfile {
-  width: 180px;
-  height: 51px;
-  left: 172px;
-  background: #E1E1E1;
-  border-radius: 30px;
-  color: #4520AB;
-  font-family: RF Rostin;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: none;
-  font-size: 16px;
-}
 .login {
   display: flex;
   flex-direction: row;
@@ -277,9 +264,10 @@ label {
   color: #4520AB;
   margin-top: 70px;
   font-family: RF Rostin;
+  margin-bottom: 100px;
 }
 
- .sendForm {
+.sendForm {
   width: 247px;
   height: 51px;
   left: 172px;
@@ -295,9 +283,10 @@ label {
   margin-left: 20px;
 }
 
-#link {
-  margin-top: 30px;
-}
+/* #link {
+  
+  
+} */
 
 .navbar {
   display: flex;
@@ -360,14 +349,14 @@ a {
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -0.03em;
-  margin-right: 20px;
+  margin-bottom: 20px;
   border: none;
   border-bottom: 1px solid #4520AB;
   margin-top: 30px;
   height: 30px;
   outline: none;
-  margin-right: 40px;
-  width: 300px;
+  margin-right: 50px;
+  width: 350px;
   justify-content: center;
   align-items: center;
   text-align: justify;
@@ -377,7 +366,7 @@ a {
 
 
 .inputdecription {
-  width: 500px;
+  width: 760px;
   color: #4520AB 50%;
   height: 24px;
   left: 178px;
@@ -393,26 +382,8 @@ a {
   margin: 30px 0 30px 0px;
   height: 30px;
   outline: none;
- 
+  
 }
- .link {
-  width: 500px;
-  color: #4520AB 50%;
-  height: 24px;
-  left: 178px;
-  font-family: RF Rostin;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: -0.03em;
-  margin-right: 20px;
-  border: none;
-  border-bottom: 1px solid #4520AB;
-  margin: 10px 20px;
-  height: 30px;
-  outline: none;
- }
 
 .highlight {
   overflow: hidden;
@@ -491,8 +462,6 @@ a {
   text-align: center;
   margin-top: 20px;
   text-align: center;
-
-
   outline: none;
   border: none;
   margin-right: 10px;
@@ -540,7 +509,7 @@ a {
   margin-top: 20px;
   text-align: center;
   font-weight: bold;
-
+  
   outline: none;
   border: none;
   margin-right: 10px;
@@ -568,7 +537,6 @@ a {
 
 .loginPlease {
   color: #4520AB;
- 
 }
 
 .test1 {
@@ -642,3 +610,98 @@ a {
 .login-container {
   margin-bottom: 50px;
 }
+
+.link {
+  width: 300px;
+  color: #4520AB 50%;
+  height: 24px;
+  left: 178px;
+  font-family: RF Rostin;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  margin-right: 20px;
+  border: none;
+  border-bottom: 1px solid #4520AB;
+  margin: 10px 20px;
+  margin-top: 30px;
+  height: 30px;
+  outline: none;
+  width: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.label {
+  width: 180px;
+  height: 50px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  font: 14px/50px Tahoma;
+  transition: all 0.18s ease-in-out;
+  
+}
+
+.label:hover {
+  color: white;
+  background: #333;
+}
+
+.btnfile {
+  display: flex;
+  width: 180px;
+  height: 51px;
+  left: 172px;
+  background: #E1E1E1;
+  border-radius: 30px;
+  color: #4520AB;
+  font-family: RF Rostin;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+ 
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+}
+
+
+.example-2 .btn-tertiary{
+  color: #4520AB;
+  display:block;
+  border-radius: 30px;
+  background: #E1E1E1;
+  width: 180px;
+  height: 51px;
+  left: 172px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  font-family: RF Rostin;
+}
+
+.example-2 .input-file{
+  opacity:0;overflow:hidden;position:absolute;z-index:-1
+}
+.example-2 .input-file + .js-labelFile{
+  overflow:hidden;
+  /* text-overflow:ellipsis; */
+  white-space:nowrap;
+  cursor:pointer;
+  padding: 6px 3px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* .example-2 .input-file + .js-labelFile .icon:before{content:"\f093"} */
+/* .example-2 .input-file + .js-labelFile.has-file .icon:before{content:"\f00c";color:#5AAC7B} */
