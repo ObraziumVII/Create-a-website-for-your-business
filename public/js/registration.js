@@ -1,6 +1,7 @@
 const signupButton = document.querySelector('#signupButton');
 const message = document.getElementById('message');
-const errorMessage = document.querySelector('#error-message-signup');
+const errorMessage = document.querySelector('.error-message');
+const loginForm = document.querySelector('#login-form');
 /**
  * Добавил функцию check для проверки паролей
  * и также fetch для signup
@@ -45,6 +46,29 @@ if (signupButton) {
         errorMessage.style.color = 'red';
         errorMessage.style.fontSize = '1.5em';
       }
+    }
+  });
+}
+if (loginForm) {
+  console.log('loginForm');
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log('email, passw', email, password);
+    const response = await fetch('/admin/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+    if(response.status === 200) {
+      window.location = '/admin/requests';
+    } else {
+      errorMessage.innerHTML = 'Email или пароль введены неверно';
+      error.style.color = 'red';
+      errorMessage.style.fontSize = '1.5em';
     }
   });
 }

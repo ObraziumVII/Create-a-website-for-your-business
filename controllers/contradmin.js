@@ -43,15 +43,14 @@ const adminSignup = async (req, res, next) => {
 };
 
 const adminLogin = async (req, res, next) => {
-  const { name, password } = req.body;
-  const admin = await Admin.findOne({ name });
+  const { email, password } = req.body;
+  const admin = await Admin.findOne({ email });
   const validPassword = await bcrypt.compare(password, admin.password);
   if (validPassword) {
     req.session.admin_id = admin._id;
-    res.locals.admin = true;
-    return res.redirect('/admin/requests');
+    return res.status(200).end();
   }
-  res.redirect('/'); // if we want to login with fetch, we can check if response.ok
+  return res.status(409).end();
 };
 
 const showReq = async (req, res) => {

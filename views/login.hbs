@@ -1,18 +1,18 @@
-<div class=class='pleaseLogin'>
+<script defer src="/js/registration.js"></script>
 
-<h1>Пожалуйста, войдите в систему</h1>
-</div>
 
 <a href='/' type='submit' >На главную</a>
-<form method="post" action="/admin/login">
-   <label for="login-input" class="loginInput">Введите Ваше имя администратора:</label>
-   <input id="login-input" name="name" type="text" placeholder="Имя">
+<form method="post" id="login-form"action="/admin/login">
+<span class='error-message'></span>
+   <label for="email" class="loginInput">Введите Ваш email администратора:</label>
+   <input id="email" name="email" type="text" placeholder="email">
 
-   <label for="pass-input" class="passInput">Введите Ваш пароль:</label>
-   <input id="pass-input" name="password" type="text" placeholder="Пароль">
+   <label for="password" class="passInput">Введите Ваш пароль:</label>
+   <input id="password" name="password" type="text" placeholder="Пароль">
 
    <input type="submit" value="Войти">
 </form>
+</div>
 
 <h1>{{loginMessage}}</h1>
 
