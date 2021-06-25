@@ -9,7 +9,7 @@
     <div id='ulReq'>
       <a href="/admin/requests?status=all"><button id='http://localhost:3000/admin/requests?status=all' class='barSearch'>Все заявки</button></a>
       <a href="/admin/requests?status=открыта"><button id='http://localhost:3000/admin/requests?status=Открыта' class='barSearch'>Открыта</button></a>
-      <a href="/admin/requests?status=в%работе"><button id='http://localhost:3000/admin/requests?status=В%работе' class='barSearch'>В работе</button></a>
+      <a href="/admin/requests?status=в%работе"><button id='http://localhost:3000/admin/requests?status=В работе' class='barSearch'>В работе</button></a>
       <a href="/admin/requests?status=отменена"><button id='http://localhost:3000/admin/requests?status=Отменена' class='barSearch'>Отменена</button></a>
       <a href="/admin/requests?status=выполнена"><button id='http://localhost:3000/admin/requests?status=Выполнена' class='barSearch'>Выполнена</button></a>
     </div>
@@ -25,9 +25,10 @@
      <th class='reqInfo'>Телефон</th>
      <th class='reqInfo'>Почта</th>
      <th class='reqInfo'>Проект</th>
+    <th class='reqInfo'>Комментарий админа</th>
      <th class='reqInfo'>Статус заявки</th>
      {{#if flag}}
-     <th>Найдено по:</th>
+     <th class='reqInfo'>Найдено по:</th>
      {{/if}}
     </tr>
     </thead>
@@ -40,6 +41,7 @@
         <td class='td'>{{this.phone}}</td>
         <td class='td'>{{this.email}}</td>
         <td class='td'>{{this.description}}</td>
+        <td class='td'>{{this.adminComment}}</td>
         <td class='td'>{{this.status}}</td>
       </tr>
       {{/each}}
