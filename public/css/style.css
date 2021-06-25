@@ -271,6 +271,7 @@ label {
   letter-spacing: 1px;
 }
 
+
 .bottom {
   display: flex;
   flex-direction: row;
@@ -358,7 +359,7 @@ a {
   margin: 20px;
 }
 
-.input, .validate {
+.input, .validate, .link {
   font-family: RF Rostin;
   font-style: normal;
   font-size: 16px;
@@ -629,31 +630,41 @@ p:hover, .mvp:hover,.coding:hover,.product:hover, .circle:hover, .text:hover,
   margin-bottom: 30px;
 }
 
-#loadFile {
-  width: 251px;
+/* #loadFile {
+  width: 198px;
   height: 51px;
   left: 172px;
   top: 463px;
-  background: #6a43d3;
-  box-shadow: 0px 7px 29px rgba(30, 10, 145, 0.712);
+  background: #E1E1E1;
   font-family: RF Rostin;
   font-size: 20px;
   border-radius: 30px;
-  color: #66eefb;;
+  color: #4520AB;
   margin-left: 20px;
 
+  display: flex;
+  text-align: center;
+  align-items: center;
   outline: none;
   border: none;
   margin-right: 10px;
   margin-bottom: 30px;
 }
 
+#loadFile:hover {
+  animation: pulse 1s;
+  box-shadow: 0px 7px 29px rgba(71, 46, 214, 0.418);
+  color: #643dd1;
+  background: #ececec;
+} */
+
 .login-container {
   margin-bottom: 50px;
 }
 
-/* .link {
-  width: 300px;
+ .link {
+   margin-left: 33px;
+  /* width: 300px;
   color: #4520AB 50%;
   height: 24px;
   left: 178px;
@@ -675,8 +686,8 @@ p:hover, .mvp:hover,.coding:hover,.product:hover, .circle:hover, .text:hover,
   overflow: hidden;
   position: absolute;
   z-index: 3;
-  overflow: hidden;
-} */
+  overflow: hidden; */
+} 
 
 .label {
   width: 180px;
@@ -695,12 +706,46 @@ p:hover, .mvp:hover,.coding:hover,.product:hover, .circle:hover, .text:hover,
   background: #333;
 }
 
-.btnfile {
-  display: flex;
-  width: 180px;
+#loadFileLabel {
+  width: 151px;
   height: 51px;
   left: 172px;
+  top: 463px;
   background: #E1E1E1;
+  font-family: RF Rostin;
+  font-size: 20px;
+  border-radius: 30px;
+  color: #4520AB;
+
+  outline: none;
+  border: none;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  
+  text-align: center;
+  align-items: center;
+}
+
+#loadFileLabel:hover {
+  cursor: pointer;
+  background-color: #f1f1f1;
+  color: #6740d3;
+  box-shadow: 0px 7px 29px rgba(65, 41, 202, 0.479);
+  animation: pulse 1s;
+}
+
+ .btnfile {
+  
+  visibility: hidden;
+  width: 1px;
+  /* width: 180px;
+  height: 51px; */
+  /* left: 172px; */
+  /* background: #E1E1E1;
   border-radius: 30px;
   color: #4520AB;
   font-family: RF Rostin;
@@ -712,15 +757,14 @@ p:hover, .mvp:hover,.coding:hover,.product:hover, .circle:hover, .text:hover,
  
   text-align: center;
   outline: none;
-  text-decoration: none;
-}
+  text-decoration: none;  */
+} 
 
 
-.example-2 .btn-tertiary{
+/* .example-2 .btn-tertiary{
   color: #4520AB;
-  display:block;
   border-radius: 30px;
-  background: #E1E1E1;
+  
   width: 180px;
   height: 51px;
   left: 172px;
@@ -729,20 +773,20 @@ p:hover, .mvp:hover,.coding:hover,.product:hover, .circle:hover, .text:hover,
   text-align: center;
   font-size: 16px;
   font-family: RF Rostin;
-}
+} */
 
-.example-2 .input-file{
+/* .example-2 .input-file{
   opacity:0;overflow:hidden;position:absolute;z-index:-1
-}
-.example-2 .input-file + .js-labelFile{
+} */
+/* .example-2 .input-file + .js-labelFile{
   overflow:hidden;
-  /* text-overflow:ellipsis; */
+  
   white-space:nowrap;
   cursor:pointer;
   padding: 6px 3px;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
+} */
 /* .example-2 .input-file + .js-labelFile .icon:before{content:"\f093"} */
 /* .example-2 .input-file + .js-labelFile.has-file .icon:before{content:"\f00c";color:#5AAC7B} */

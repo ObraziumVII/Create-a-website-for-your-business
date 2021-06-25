@@ -7,8 +7,6 @@ router.get('/', (req, res) => {
   res.render('index');
 });
 
-
-
 router.post('/apply', async (req, res) => {
   // console.log('Hello');
   try {

@@ -52,15 +52,15 @@
       <input name="description" id="inputDecription" class="inputdecription"
         placeholder="Пожалуйста, максимально подробно опишите свою идею, проект">
     </div>
-    <div id="link">
+    {{!-- <div id="link"> --}}
       <div class="example-2">
-          <input type="file" name="file" id="inputImg" class="btnfile input-file" >
-          <label for="file" class="btn btn-tertiary js-labelFile" id='loadFile'>
-            <span class="js-fileName">ЗАГРУЗИТЬ ФАЙЛ</span>
-            </label>
-      </div>
+      <input type="file" name="file" id="inputImg" class="btnfile input-file" placeholder="ЗАГРУЗИТЬ ФАЙЛ">
+          <label for="inputImg" class="btn btn-tertiary js-labelFile" id='loadFileLabel'>
+          ЗАГРУЗИТЬ ФАЙЛ
+          </label> 
       <input name="link" id="inputLink" class="link" placeholder="Прикрепить ссылку">
-    </div>
+      </div>
+    {{!-- </div> --}}
     <div class="bottom">
       <button class="sendForm" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
       <div class="bottomtext">Нажимая на кнопку, вы даете согласие на обработку <br>персональных данных и соглашаетесь с
