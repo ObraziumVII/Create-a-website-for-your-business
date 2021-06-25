@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
 router.post('/apply', async (req, res) => {
   // console.log('Hello');
   try {
+    console.log('Зашел в ручку');
     const {
       name, companyName, phone, email, description, img, link,
     } = req.body;

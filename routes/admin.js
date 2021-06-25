@@ -34,13 +34,16 @@ router.get('/requests', isAdmin, async (req, res, next) => {
   try {
     if (!status) {
       const request = await Request.find().lean();
+      request.sort((a,b) => b.createdAt - a.createdAt); 
       return res.render('requests', { request: request.map((el) => ({...el, createdAt: new Date(el.createdAt).toLocaleDateString()})) });
     }
     if (status == 'all') {
       const request = await Request.find().lean();
+      request.sort((a,b) => b.createdAt - a.createdAt); 
       return res.render('search', { request: request.map((el) => ({...el, createdAt: new Date(el.createdAt).toLocaleDateString() })), layout: false });
     }
     const request = await Request.find({ status }).lean();
+    request.sort((a,b) => b.createdAt - a.createdAt); 
     return res.render('search', { request: request.map((el) => ({...el, createdAt: new Date(el.createdAt).toLocaleDateString() })), layout: false });
   } catch (err) {
     err.status = 404;
