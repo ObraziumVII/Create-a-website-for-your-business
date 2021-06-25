@@ -199,25 +199,21 @@ span {
   text-decoration: none
 }
 
-#logout {
-  display: flex;
-  background: #66eefb;
-  box-shadow: 0px 7px 29px #4520AB;
-  border-radius: 30px;
-  color: #4520AB;
+#logout, #mainAdmin, #adminName {
+  color: #66eefb;
   font-family: RF Rostin;
-  width: 180px;
-  height: 51px;
-  left: 172px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   letter-spacing: 1px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
+  text-decoration: none;
+  margin-left: 20px;
 }
 
-#mainAdmin {
+#logout:hover, #mainAdmin:hover {
+  color: #FFBC5B;
+}
+
+/* #mainAdmin {
   display: flex;
   background: #66eefb;
   box-shadow: 0px 7px 29px #4520AB;
@@ -233,7 +229,7 @@ span {
   letter-spacing: 1px;
   font-weight: bold;
   font-size: 18px;
-}
+} */
 
 .top {
   font-family: RF Rostin;
@@ -260,10 +256,6 @@ span {
   letter-spacing: 1px;
   margin-top: 10px;
 }
-#loginContainer {
-  
-}
-
 
 label {
   width: 224px;
@@ -359,7 +351,7 @@ label {
   margin: 20px;
 }
 
-.input {
+.input, .validate {
   font-family: RF Rostin;
   font-style: normal;
   font-size: 16px;
@@ -423,7 +415,7 @@ label {
   border-collapse: collapse;
   background-color: #ffebce;
   color: #4e350e;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .tr:hover {
@@ -445,13 +437,15 @@ label {
 }
 
 .flex-cont {
-  border: 5px solid #4520AB;
+  /* border: 5px solid #4520AB; */
   display:flex;
   flex-direction:column;
+
+  margin-top: 30px;
 }
-.flex-elem {
+/* .flex-elem {
   border: 5px solid #4520AB;
-}
+} */
 
 #project {
   margin-top: 70px;
@@ -464,13 +458,13 @@ label {
   align-items: baseline
 }
 
-.barSearch {
+.barSearch, .editBtn {
   width: 177px;
   height: 51px;
   left: 172px;
   top: 463px;
   background: #FFBC5B;
-  box-shadow: 0px 7px 29px rgba(255, 188, 91, 0.37);
+  box-shadow: 0px 7px 29px rgba(221, 131, 14, 0.74);
   border-radius: 30px;
   color: #4520AB;
   font-family: RF Rostin;
@@ -488,7 +482,7 @@ label {
   margin-bottom: 30px;
 }
 
-.barSearch:hover{
+.barSearch:hover, .editBtn:hover {
   cursor: pointer;
   animation: pulse 1s;
   background: #ffc471;
@@ -515,7 +509,7 @@ label {
   margin-bottom: 30px;
 }
 
-.loop:hover{
+.loop:hover, .editFormBtn:hover{
   cursor: pointer;
   animation: pulse 1s;
   background: #8f6af5;
@@ -555,7 +549,7 @@ label {
   padding-bottom: 7px;
 }
 
-.reqInfo:hover, .zayavki:hover {
+.reqInfo:hover, .zayavki:hover, #adminName:hover, .card-title:hover, p:hover {
   cursor: default;
 }
 
@@ -563,5 +557,47 @@ label {
   margin-left: 30px;
 }
 #reqCard {
-  color: black;
+  background-color: #ffe6c3;
+  border: 7px solid #4520AB;
+  border-radius: 7px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  color: #4520AB;
+  font-size: 20px;
+  box-shadow: 0px 7px 29px rgba(59, 14, 221, 0.61);
+}
+
+#reqCard:hover {
+  background-color: #fff0d9;
+  border: 7px solid #6f4eca;
+  color: #6f4eca;
+  box-shadow: 0px 7px 29px rgba(145, 120, 10, 0.712);
+}
+
+.card-title {
+  color: #c57e1a;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.editFormBtn {
+  width: 151px;
+  height: 51px;
+  left: 172px;
+  top: 463px;
+  background: #6a43d3;
+  box-shadow: 0px 7px 29px #2c0d81(255, 188, 91, 0.37);
+  border-radius: 30px;
+  color: #66eefb;;
+  text-align: justify;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+
+  outline: none;
+  border: none;
+  margin-right: 10px;
+  margin-bottom: 30px;
 }
