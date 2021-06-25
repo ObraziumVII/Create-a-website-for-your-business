@@ -3,6 +3,8 @@ body {
   color: #fff;
   display: flex;
   flex-direction: column;
+  align-content: flex-start;
+  min-height: 100vh
 }
 
 #body {
@@ -11,14 +13,12 @@ body {
   position: relative;
   justify-content: center;
   align-items: center;
-  
-  align-content: flex-start;
-  min-height: 723px;
-}
+ }
 
 .main {
   margin-left: 100px;
 }
+
 .mvp {
   width: 401px;
   height: 268px;
@@ -74,7 +74,6 @@ span {
   letter-spacing: 2px;
 }
 
-
 .btnmvp {
   display: flex;
   justify-content: center;
@@ -100,18 +99,20 @@ span {
 .footer {
   display: flex;
   width: 100%;
-  height: 70px;
+  height: 90px;
   background-color: #4520ab;
   font-family: RF Rostin;
   font-weight: bold;
-  justify-content:end;
+  justify-content: center;
   align-items: center;
   text-align: center;
   margin-top: 30px;
   color: #66eefb;;
-
+  /* position: absolute */
+  margin-top: auto;
   bottom: 0px;
 }
+
 .apply {
   font-family: RF Rostin;
   font-style: normal;
@@ -260,10 +261,6 @@ span {
   letter-spacing: 1px;
   margin-top: 10px;
 }
-#loginContainer {
-  
-}
-
 
 label {
   width: 224px;
@@ -271,7 +268,6 @@ label {
   left: 174px;
   font-family: RF Rostin;
   font-style: normal;
-  
   font-size: 18px;
   line-height: 150%;
   letter-spacing: -0.04em;
@@ -329,8 +325,11 @@ label {
   font-style: normal;
   font-weight: bold;
   letter-spacing: 2px;
+  
 }
-
+a {
+  text-decoration: none;
+}
 .wrapper {
   display: flex;
   flex-direction: row;
