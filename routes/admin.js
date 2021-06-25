@@ -33,15 +33,15 @@ router.get('/requests', isAdmin, async (req, res, next) => {
   const { status } = req.query;
   try {
     if (!status) {
-      const request = await Request.find();
-      return res.render('requests', { request });
+      const request = await Request.find().lean();
+      return res.render('requests', { request: request.map((el) => ({...el, createdAt: new Date(el.createdAt).toLocaleDateString()})) });
     }
-    else if (status == 'all') {
-      const request = await Request.find();
-      return res.render('search', { request, layout: false  });
+    if (status == 'all') {
+      const request = await Request.find().lean();
+      return res.render('search', { request: request.map((el) => ({...el, createdAt: new Date(el.createdAt).toLocaleDateString() })), layout: false });
     }
-    const request = await Request.find({ status });
-    return res.render('search', { request, layout: false });
+    const request = await Request.find({ status }).lean();
+    return res.render('search', { request: request.map((el) => ({...el, createdAt: new Date(el.createdAt).toLocaleDateString() })), layout: false });
   } catch (err) {
     err.status = 404;
     err.message = 'There is no search with this status';
@@ -64,4 +64,3 @@ router.get('/requests/:idreq', showReq);
 router.post('/requests/:idreq', updReq);
 
 module.exports = router;
-

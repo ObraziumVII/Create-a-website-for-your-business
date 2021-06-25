@@ -226,6 +226,12 @@ body {
   font-size: 18px;
 } */
 
+.labelColumn {
+  display: flex;
+  flex-direction: row;
+  text-align: end;
+}
+
 .top {
   font-family: RF Rostin;
   display: flex;
@@ -526,7 +532,7 @@ a {
   
   outline: none;
   border: none;
-  margin-right: 10px;
+  margin-right: 20px;
   margin-bottom: 30px;
 }
 
@@ -623,11 +629,30 @@ p:hover, .mvp:hover,.coding:hover,.product:hover, .circle:hover, .text:hover,
   margin-bottom: 30px;
 }
 
+#loadFile {
+  width: 251px;
+  height: 51px;
+  left: 172px;
+  top: 463px;
+  background: #6a43d3;
+  box-shadow: 0px 7px 29px rgba(30, 10, 145, 0.712);
+  font-family: RF Rostin;
+  font-size: 20px;
+  border-radius: 30px;
+  color: #66eefb;;
+  margin-left: 20px;
+
+  outline: none;
+  border: none;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
 .login-container {
   margin-bottom: 50px;
 }
 
-.link {
+/* .link {
   width: 300px;
   color: #4520AB 50%;
   height: 24px;
@@ -649,9 +674,9 @@ p:hover, .mvp:hover,.coding:hover,.product:hover, .circle:hover, .text:hover,
   opacity: 0;
   overflow: hidden;
   position: absolute;
-  z-index: -1;
+  z-index: 3;
   overflow: hidden;
-}
+} */
 
 .label {
   width: 180px;

@@ -2,14 +2,22 @@
 
 <form method="POST" id="signupButton" action="/admin/signup">
 <span class='error-message'></span>
-  <div>
-    <label>Введите Ваше имя администратора:</label>
-    <input name="name" type="text" class='input' placeholder="Имя" required>
-  </div>
+<div class='labelColumn'>
+    <div>
+      <label>Введите Ваше имя администратора:</label>
+    </div>
+    <div>
+      <input name="name" type="text" class='input' placeholder="Имя" required>
+    </div>
+</div>
+<div class='labelColumn'>
   <div>
     <label for=class="loginInput">Введите Ваш email:</label>
+  </div>
+  <div>
     <input name="email" type="email" class='input' placeholder="Email" required>
   </div>
+</div>
   <div>
     <label for="password" class="passInput">Введите Ваш пароль:</label>
     <input id="password" name="password" minlength="6" type="password" class='input' placeholder="Пароль" required>
