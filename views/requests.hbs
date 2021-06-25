@@ -1,52 +1,39 @@
-{{!-- <nav class='navV'>
-    <div class="nav-wrapper blue darken-4">
-      <a href="#" class="brand-logo">Elbrus</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><h3>{{admin}}</h3></li>
-        {{!-- <li><a href="badges.html">Components</a></li> --}}
-        <li><a href='/admin/logout'>Выйти</a></li>
-      </ul>
-    </div>
-</nav> --}}
 
-{{!-- <div class='searchBar'>
-  <label for="sarch-input" class="sarchInput">Заявки</label>
-  <input id="search-input" name="sarch" type="text" placeholder="🔎 поиск">
-</div> --}}
 <script defer src='/js/request.js'></script>
 <div class='searchBar'>
-  <div>
+    <h1 class='zayavki'>Заявки</h1>
     <form method='post' action='/admin/requests' name='inputForm'>
-      <input id="search-input" name="search" type="text" placeholder="поиск">
-      <button>🔎</button>
+      <input id="search-input" class='input' name="search" type="text" placeholder="Поиск">
+      <button class='loop'>🔎</button>
     </form>
-    <ul>
-      <li><a href="/admin/requests">Все заявки</a></li>
-      <li><a href="/admin/requests?status=открыта">Открыта</a></li>
-      <li><a href="/admin/requests?status=в%работе">В работе</a></li>
-      <li><a href="/admin/requests?status=отменена">Отменена</a></li>
-      <li><a href="/admin/requests?status=выполнена">Выполнена</a></li>
-    </ul>
-  </div>
+    <div id='ulReq'>
+      <a href="/admin/requests?status=all"><button id='http://localhost:3000/admin/requests?status=all' class='barSearch'>Все заявки</button></a>
+      <a href="/admin/requests?status=открыта"><button id='http://localhost:3000/admin/requests?status=открыта' class='barSearch'>Открыта</button></a>
+      <a href="/admin/requests?status=в%работе"><button id='http://localhost:3000/admin/requests?status=в%работе' class='barSearch'>В работе</button></a>
+      <a href="/admin/requests?status=отменена"><button id='http://localhost:3000/admin/requests?status=отменена' class='barSearch'>Отменена</button></a>
+      <a href="/admin/requests?status=выполнена"><button id='http://localhost:3000/admin/requests?status=выполнена' class='barSearch'>Выполнена</button></a>
+    </div>
 </div>
 
-<div class='requests'>
+<div class='requests' id='requestsTable'>
   <table class="highlight">
+    <thead>
     <tr>
-     <th>Дата</th>
-     <th>Имя</th>
-     <th>Компания</th>
-     <th>Телефон</th>
-     <th>Почта</th>
-     <th>Проект</th>
-     <th>Статус заявки</th>
+     <th class='reqInfo'>Дата</th>
+     <th class='reqInfo'>Имя</th>
+     <th class='reqInfo'>Компания</th>
+     <th class='reqInfo'>Телефон</th>
+     <th class='reqInfo'>Почта</th>
+     <th class='reqInfo'>Проект</th>
+     <th class='reqInfo'>Статус заявки</th>
      {{#if flag}}
      <th>Найдено по:</th>
      {{/if}}
     </tr>
-    <div class='allRequests'>
+    </thead>
+    <tbody class='allRequests'>
       {{#each request}}
-      <tr class='tr' id='{{this._id}}'> 
+      <tr class='tr' data-open='{{this._id}}' id='{{this._id}}'> 
         <td class='td'>{{this.createdAt}}</td>
         <td class='td'>{{this.name}}</td>
         <td class='td'>{{this.companyName}}</td>
@@ -56,79 +43,7 @@
         <td class='td'>{{this.status}}</td>
       </tr>
       {{/each}}
-      {{#each validArrNames}}
-      <tr class='tr' id='{{this._id}}'> 
-        <td class='td'>{{this.createdAt}}</td>
-        <td class='td'>{{this.name}}</td>
-        <td class='td'>{{this.companyName}}</td>
-        <td class='td'>{{this.phone}}</td>
-        <td class='td'>{{this.email}}</td>
-        <td class='td'>{{this.description}}</td>
-        <td class='td'>{{this.status}}</td>
-        <td class='td'>имени</td>
-      </tr>
-      {{/each}}
-      {{#each validArrCompany}}
-      <tr class='tr' id='{{this._id}}'> 
-        <td class='td'>{{this.createdAt}}</td>
-        <td class='td'>{{this.name}}</td>
-        <td class='td'>{{this.companyName}}</td>
-        <td class='td'>{{this.phone}}</td>
-        <td class='td'>{{this.email}}</td>
-        <td class='td'>{{this.description}}</td>
-        <td class='td'>{{this.status}}</td>
-        <td class='td'>компании</td>
-      </tr>
-      {{/each}}
-      {{#each validArrPhones}}
-      <tr class='tr' id='{{this._id}}'> 
-        <td class='td'>{{this.createdAt}}</td>
-        <td class='td'>{{this.name}}</td>
-        <td class='td'>{{this.companyName}}</td>
-        <td class='td'>{{this.phone}}</td>
-        <td class='td'>{{this.email}}</td>
-        <td class='td'>{{this.description}}</td>
-        <td class='td'>{{this.status}}</td>
-        <td class='td'>телефону</td>
-      </tr>
-      {{/each}}
-      {{#each validArrEmail}}
-      <tr class='tr' id='{{this._id}}'> 
-        <td class='td'>{{this.createdAt}}</td>
-        <td class='td'>{{this.name}}</td>
-        <td class='td'>{{this.companyName}}</td>
-        <td class='td'>{{this.phone}}</td>
-        <td class='td'>{{this.email}}</td>
-        <td class='td'>{{this.description}}</td>
-        <td class='td'>{{this.status}}</td>
-        <td class='td'>почте</td>
-      </tr>
-      {{/each}}
-      {{#each validArrDescr}}
-      <tr class='tr' id='{{this._id}}'> 
-        <td class='td'>{{this.createdAt}}</td>
-        <td class='td'>{{this.name}}</td>
-        <td class='td'>{{this.companyName}}</td>
-        <td class='td'>{{this.phone}}</td>
-        <td class='td'>{{this.email}}</td>
-        <td class='td'>{{this.description}}</td>
-        <td class='td'>{{this.status}}</td>
-        <td class='td'>описанию заявки</td>
-      </tr>
-      {{/each}}
-      {{#each validArrCom}}
-      <tr class='tr' id='{{this._id}}'> 
-        <td class='td'>{{this.createdAt}}</td>
-        <td class='td'>{{this.name}}</td>
-        <td class='td'>{{this.companyName}}</td>
-        <td class='td'>{{this.phone}}</td>
-        <td class='td'>{{this.email}}</td>
-        <td class='td'>{{this.description}}</td>
-        <td class='td'>{{this.status}}</td>
-        <td class='td'>комментарию админа</td>
-      </tr>
-      {{/each}}
-    </div>
+    </tbody>
   </table>
 </div>
 

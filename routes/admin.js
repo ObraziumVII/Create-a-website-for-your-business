@@ -2,7 +2,7 @@ const express = require('express');
 const Request = require('../db/models/requestModel');
 const { isAdmin } = require('../middleware/middleware');
 const {
-  adminLogin, adminSignup, showReq, editReq, updReq, search,
+  adminLogin, adminSignup, showReq, updReq, search,
 } = require('../controllers/contradmin');
 
 const router = express.Router();
@@ -36,8 +36,12 @@ router.get('/requests', isAdmin, async (req, res, next) => {
       const request = await Request.find();
       return res.render('requests', { request });
     }
+    else if (status == 'all') {
+      const request = await Request.find();
+      return res.render('search', { request, layout: false  });
+    }
     const request = await Request.find({ status });
-    return res.render('requests', { request });
+    return res.render('search', { request, layout: false });
   } catch (err) {
     err.status = 404;
     err.message = 'There is no search with this status';
@@ -55,7 +59,7 @@ router.get('/requests/s/', (req, res) => {
 
 router.get('/requests/:idreq', showReq);
 
-router.get('/requests/:idreq/edit', editReq);
+// router.get('/requests/:idreq/edit', editReq);
 
 router.post('/requests/:idreq', updReq);
 

@@ -6,25 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
-    <!-- Compiled and minified CSS -->
-    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> --}}
-
-    <!-- Compiled and minified JavaScript -->
-    {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
 </head>
 <nav class="navbar">
-  <div class="wrapper">
+  <div class="wrapper" >
     <div class="elbrus"> E L B R <br> U S / <br> B O O T <br> C A M P </div>
     <div class="coding">E l b r u s <br>c o d i n g<br> b o o t c a m p</div>
   </div>
   {{#if admin}}
   <div class="login">
-    <button><a id="log" href="/admin/logout">Logout</a></button>
+    <h3>{{adminName}}</h3>
+    <a id="mainAdmin" href="/admin/requests">Main</a>
+    <a id="logout" href="/admin/logout">Logout</a>
   </div>
   {{else}}
   <div class="login">
-    <button><a id="log" href="/admin/login">Login</a></button>
-    <button><a id="sign" href="/admin/signup">Signup</a></button>
+    <a href="/admin/login" id="log">Login</a>
+    <a id="sign" href="/admin/signup">Signup</a>
   </div>
   {{/if}}
 </nav>
@@ -33,8 +32,9 @@
   {{{body}}}
 
 </div>
+
 <footer class="footer">
-  <div> 2021 </div>
+  <div class='Eji'> ЕЖИ 2021 </div>
 </footer>
 
 </html>

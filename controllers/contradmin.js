@@ -1,5 +1,6 @@
 require('dotenv').config();
 const bcrypt = require('bcrypt');
+const e = require('express');
 const Admin = require('../db/models/adminModel');
 const Request = require('../db/models/requestModel');
 // const nodemailer = require("nodemailer");
@@ -51,30 +52,47 @@ const adminLogin = async (req, res, next) => {
     return res.status(200).end();
   }
   return res.status(409).end();
+  // const { name, password } = req.body;
+  // if (!password || !name) {
+  //   res.redirect('/');
+  // } else {
+  //   const admin = await Admin.findOne({ name });
+  //   const validPassword = await bcrypt.compare(password, admin.password);
+  //   if (validPassword) {
+  //     req.session.admin_id = admin._id;
+  //     req.session.adminName = admin.name;
+  //     res.locals.admin = true;
+  //     return res.redirect('/admin/requests');
+  //   }
+  //   res.redirect('/'); // if we want to login with fetch, we can check if response.ok
+  // }
 };
 
 const showReq = async (req, res) => {
   id = req.params.idreq;
-  console.log(id);
   const request = await Request.findOne({ _id: id });
-  console.log(request);
   res.render('admin/request', { request });
 };
-const editReq = async (req, res) => {
-  id = req.params.idreq;
-  const request = await Request.findOne({ _id: id });
-  console.log(request._id);
-  res.render('admin/editForm', { id: request._id });
-};
+// const editReq = async (req, res) => {
+//   id = req.params.idreq;
+//   const request = await Request.findOne({ _id: id });
+//   console.log(request._id);
+//   console.log('Зашел в ручку');
+//   // res.render('admin/editForm', { id: request._id });
+//   res.render('admin/editForm', { layout: false });
+// };
 const updReq = async (req, res) => {
   let request = await Request.findById(req.params.idreq);
+  const _id = req.body._id;
+  console.log('Зашел в ручку');
   try {
-    console.log(req.body);
-    request = await Request.findByIdAndUpdate(req.params.idreq, { adminComment: req.body.adminComment, status: req.body.status });
+    // console.log(req.body);
+    await Request.findByIdAndUpdate(req.params.idreq, { adminComment: req.body.adminComment, status: req.body.status });
+    request = await Request.findById(req.params.idreq);
   } catch (error) {
     console.log('не вышло');
   }
-  res.render('admin/request');
+  res.render(`admin/request`, { request });
 };
 const search = async (req, res) => {
   let { search } = req.body;
@@ -82,59 +100,61 @@ const search = async (req, res) => {
   let flag = false;
 
   const requests = await Request.find();
-  let validArrNames = [];
-  let validArrCompany = [];
-  let validArrPhones = [];
-  let validArrEmail = [];
-  let validArrDescr = [];
-  let validArrCom = [];
-  //поиск по имени
-  for (let i =0; i <requests.length; i++) {
-    if (search == requests[i].name.toLowerCase()){
+  const validArrNames = [];
+  const validArrCompany = [];
+  const validArrPhones = [];
+  const validArrEmail = [];
+  const validArrDescr = [];
+  const validArrCom = [];
+  // поиск по имени
+  for (let i = 0; i < requests.length; i++) {
+    if (requests[i].name.toLowerCase().includes(search)) {
       validArrNames.push(requests[i]);
       flag = true;
     }
   }
   // поиск по компании
-  for (let i =0; i <requests.length; i++) {
-    if (search == requests[i].companyName.toLowerCase()){
+  for (let i = 0; i < requests.length; i++) {
+    if (search == requests[i].companyName.toLowerCase()) {
       validArrCompany.push(requests[i]);
       flag = true;
     }
   }
   // поиск по номеру телефона
-  for (let i =0; i <requests.length; i++) {
-    if (search == requests[i].phone.toLowerCase()){
+  for (let i = 0; i < requests.length; i++) {
+    if (search == requests[i].phone.toLowerCase()) {
       validArrPhones.push(requests[i]);
       flag = true;
     }
   }
   // поиск по номеру email
-  for (let i =0; i <requests.length; i++) {
-    if (search == requests[i].email.toLowerCase()){
+  for (let i = 0; i < requests.length; i++) {
+    if (search == requests[i].email.toLowerCase()) {
       validArrEmail.push(requests[i]);
       flag = true;
     }
   }
   // поиск по совпадению в описании
-  for (let i =0; i <requests.length; i++) {
-    if (requests[i].description.toLowerCase().includes(search)){
+  for (let i = 0; i < requests.length; i++) {
+    if (requests[i].description.toLowerCase().includes(search)) {
       validArrDescr.push(requests[i]);
       flag = true;
     }
   }
-  for (let i =0; i <requests.length; i++) {
-    if (requests[i].adminComment){
-      if (requests[i].adminComment.toLowerCase().includes(search)){
+  for (let i = 0; i < requests.length; i++) {
+    if (requests[i].adminComment) {
+      if (requests[i].adminComment.toLowerCase().includes(search)) {
         validArrCom.push(requests[i]);
         flag = true;
       }
     }
   }
 
-  res.render('requests', { admin: 'eeee', flag, validArrNames, validArrCompany, validArrPhones, validArrEmail, validArrDescr, validArrCom });
-}
+  res.render('search', {
+    flag, validArrNames, validArrCompany, validArrPhones, validArrEmail, validArrDescr, validArrCom, layout: false,
+  });
+};
 
 module.exports = {
-  adminLogin, adminSignup, showReq, editReq, updReq, search,
+  adminLogin, adminSignup, showReq, updReq, search,
 };

@@ -1,11 +1,21 @@
+body {
+  margin: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
 #body {
   display:flex;
+  flex-wrap: wrap;
   position: relative;
-  /* min-height: 100vh;
-  min-width: 100vw; */
   justify-content: center;
   align-items: center;
+  
+  align-content: flex-start;
+  min-height: 723px;
 }
+
 .main {
   margin-left: 100px;
 }
@@ -16,7 +26,6 @@
   top: 157px;
   font-family: RF Rostin;
   font-style: normal;
-  /* font-weight: bold; */
   font-size: 60px;
   line-height: 112%;
   letter-spacing: -0.04em;
@@ -31,9 +40,20 @@ span {
   color:#FFBC5B;
   font-family: RF Rostin;
 }
+.div {
+  display: flex;
+  flex-direction: row;
+}
+.top {
+  display: flex;
+  justify-content: flex-start;
+}
 #top{
+  display: flex;
+  flex-direction: column;
   margin-left: 0px;
   font-family: RF Rostin;
+  justify-content: flex-end;
 }
 .product {
   display: flex;
@@ -54,38 +74,54 @@ span {
   letter-spacing: 2px;
 }
 
+
 .btnmvp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 247px;
   height: 51px;
   left: 172px;
   top: 463px;
   background: #FFBC5B;
-  box-shadow: 0px 7px 29px rgba(255, 188, 91, 0.37);
   border-radius: 30px;
+  border: none;
   color: #4520AB;
   font-family: RF Rostin;
-  justify-content: center;
-  align-items: center;
-  text-align: justify;
   margin-top: 20px;
   text-align: center;
-  font-weight: bold;
+  font-size: 18px;
+  margin-left: 0px;
+  font-family: RF Rostin;
+  font-style: normal;
+  text-decoration: none;
 }
 
 .footer {
+  display: flex;
   width: 100%;
   height: 70px;
   background-color: #4520ab;
   font-family: RF Rostin;
   font-weight: bold;
-  justify-content: center;
+  justify-content:end;
   align-items: center;
   text-align: center;
-  margin-top: 70px;
+  margin-top: 30px;
   color: #66eefb;;
-  padding-top: 20px;
-}
 
+  bottom: 0px;
+}
+.apply {
+  font-family: RF Rostin;
+  font-style: normal;
+  font-size: 46px;
+  line-height: 200%;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  color: #4520AB;
+  letter-spacing: 2px;
+}
 .circle {
   display: flex;
   left: 15%;
@@ -123,7 +159,6 @@ span {
 }
 
 .btnfile {
-  
   width: 180px;
   height: 51px;
   left: 172px;
@@ -134,37 +169,55 @@ span {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-weight: bold;
-
-  /* letter-spacing: 1px; */
+  border: none;
+  font-size: 16px;
 }
 .login {
   display: flex;
   flex-direction: row;
-  justify-content:end;
-  align-items: flex-end;
-  margin-left: 300px;
+  justify-content: center;
+  align-items: center;
   font-family: RF Rostin;
+  background-color: #4520AB;
 }
 
 #log {
+  margin-right: 10px;
+  color: #66eefb;
+  font-family: RF Rostin;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 24px;
+  text-decoration: none;
+}
+#sign {
+  color: #66eefb;
+  font-family: RF Rostin;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 24px;
+  text-decoration: none
+}
+
+#logout {
   display: flex;
   background: #66eefb;
   box-shadow: 0px 7px 29px #4520AB;
   border-radius: 30px;
   color: #4520AB;
+  font-family: RF Rostin;
   width: 180px;
   height: 51px;
   left: 172px;
-  font-family: RF Rostin;
   justify-content: center;
   align-items: center;
-  text-align: justify;
+  text-align: center;
   letter-spacing: 1px;
   font-weight: bold;
   font-size: 18px;
 }
-#sign {
+
+#mainAdmin {
   display: flex;
   background: #66eefb;
   box-shadow: 0px 7px 29px #4520AB;
@@ -188,7 +241,7 @@ span {
   flex-direction: row;
   color: #4520AB;
   margin-top: 20px;
-justify-content: center;
+  justify-content: center;
   align-items: center;
   text-align: center;
 }
@@ -211,29 +264,14 @@ justify-content: center;
   
 }
 
-.apply {
-  /* position: absolute; */
-  width: 435px;
-  height: 100px;
-  left: 172px;
-  font-family: RF Rostin;
-  font-style: normal;
-  /* font-weight: bold; */
-  font-size: 50px;
-  line-height: 200%;
-  letter-spacing: -0.06em;
-  color: #4520AB;
-  letter-spacing: 2px;
-}
 
 label {
-  /* position: absolute; */
   width: 224px;
   height: 27px;
   left: 174px;
   font-family: RF Rostin;
   font-style: normal;
-  /* font-weight: bold; */
+  
   font-size: 18px;
   line-height: 150%;
   letter-spacing: -0.04em;
@@ -245,12 +283,11 @@ label {
   display: flex;
   flex-direction: row;
   color: #4520AB;
-  margin-top: 30px;
+  margin-top: 70px;
   font-family: RF Rostin;
 }
 
  .sendForm {
-  /* position: absolute; */
   width: 247px;
   height: 51px;
   left: 172px;
@@ -258,8 +295,9 @@ label {
   box-shadow: 0px 7px 29px rgba(255, 188, 91, 0.37);
   border-radius: 30px;
   color: #4520AB;
-  font-weight: bold;
   font-family: RF Rostin;
+  border: none;
+  font-size: 16px;
 }
 .bottomtext {
   margin-left: 20px;
@@ -275,11 +313,6 @@ label {
   color: #66eefb;
   height: 100px;
   padding: 7px 7px 7px 7px ;
-  /* margin-left: 100px; */
-  /* width: 900px; */
- /* justify-content: end;
-  align-items: flex-end;
-  text-align: justify; */
   font-family: RF Rostin;
 }
 
@@ -287,25 +320,20 @@ label {
   display: flex;
   background-color: #66eefb;
   color: #4520AB;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   justify-content: center;
   align-items: center;
   text-align: justify;
   font-family: RF Rostin;
   font-style: normal;
   font-weight: bold;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-left: 450px;
-  /* letter-spacing: -0.1em; */
   letter-spacing: 2px;
 }
 
 .wrapper {
   display: flex;
   flex-direction: row;
-  margin-top: 5px;
   font-family: RF Rostin;
   font-style: normal;
   font-weight: bold;
@@ -323,7 +351,7 @@ label {
   font-family: RF Rostin;
   font-style: normal;
   font-weight: bold;
-  /* letter-spacing: -0.01em; */
+  
   letter-spacing: 1px;
 }
 
@@ -350,10 +378,8 @@ label {
   text-align: justify;
 }
 
-input::-webkit-input-placeholder {
-  color: #a6a96d 50%;
-}
- 
+::-webkit-input-placeholder {color:#4e349685}
+
 
 .inputdecription {
   width: 500px;
@@ -369,7 +395,7 @@ input::-webkit-input-placeholder {
   margin-right: 20px;
   border: none;
   border-bottom: 1px solid #4520AB;
-  margin: 10px 0;
+  margin: 30px 0 30px 0px;
   height: 30px;
   outline: none;
  
@@ -392,12 +418,32 @@ input::-webkit-input-placeholder {
   height: 30px;
   outline: none;
  }
-.tr:hover {
-  box-shadow: 0px 0px 3px 3px #4520AB;
+
+.tr {
+  border-collapse: collapse;
+  background-color: #ffebce;
+  color: #4e350e;
+  font-size: 18px;
 }
+
+.tr:hover {
+  box-shadow: 0px 0px 3px 3px #ffd597;
+  background-color: #fff8ef;
+  cursor: pointer;
+  color: #81602b;
+}
+
 .td {
-  border: 2px solid black;
- }
+  border: 1px solid #ddac5e;
+  text-align: center
+}
+
+.td:hover {
+  border: 1px solid #fffdf4;
+  background-color: #ffffff;
+  color: #a58146;
+}
+
 .flex-cont {
   border: 5px solid #4520AB;
   display:flex;
@@ -405,4 +451,117 @@ input::-webkit-input-placeholder {
 }
 .flex-elem {
   border: 5px solid #4520AB;
+}
+
+#project {
+  margin-top: 70px;
+}
+
+.searchBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline
+}
+
+.barSearch {
+  width: 177px;
+  height: 51px;
+  left: 172px;
+  top: 463px;
+  background: #FFBC5B;
+  box-shadow: 0px 7px 29px rgba(255, 188, 91, 0.37);
+  border-radius: 30px;
+  color: #4520AB;
+  font-family: RF Rostin;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  text-align: center;
+
+
+  outline: none;
+  border: none;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.barSearch:hover{
+  cursor: pointer;
+  animation: pulse 1s;
+  background: #ffc471;
+  color: #6541c7;
+}
+
+.loop {
+  width: 51px;
+  height: 51px;
+  left: 172px;
+  top: 463px;
+  background: #6a43d3;
+  box-shadow: 0px 7px 29px #2c0d81(255, 188, 91, 0.37);
+  border-radius: 30px;
+  color: #4520AB;
+  text-align: justify;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+
+  outline: none;
+  border: none;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.loop:hover{
+  cursor: pointer;
+  animation: pulse 1s;
+  background: #8f6af5;
+}
+
+.zayavki {
+  margin-right: 30px;
+  color: #4520AB;
+  text-align: justify;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.adminName {
+  margin-right: 20px;
+}
+
+.loginPlease {
+  color: #4520AB;
+ 
+}
+
+.test1 {
+  display: flex;
+}
+.editHidden {
+  visibility: hidden;
+}
+.editVisible {
+  visibility: visible;
+}
+.reqInfo {
+  color: #4520AB;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 7px;
+}
+
+.reqInfo:hover, .zayavki:hover {
+  cursor: default;
+}
+
+.Eji {
+  margin-left: 30px;
+}
+#reqCard {
+  color: black;
 }
