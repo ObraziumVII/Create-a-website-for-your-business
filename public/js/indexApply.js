@@ -6,7 +6,6 @@ const inputEmail = document.querySelector('#inputEmail');
 const inputDecription = document.querySelector('#inputDecription');
 const inputImg = document.querySelector('#inputImg');
 const inputLink = document.querySelector('#inputLink');
-
 sendForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const name = inputName.value;
@@ -16,7 +15,7 @@ sendForm.addEventListener('submit', async (event) => {
   const description = inputDecription.value;
   const img = inputImg.value;
   const link = inputLink.value;
-
+  console.log('Отправляем феч');
   const response = await fetch('/apply', {
     method: 'POST',
     headers: {
