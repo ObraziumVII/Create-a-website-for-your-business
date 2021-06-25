@@ -26,6 +26,7 @@ const adminSignup = async (req, res, next) => {
       const admin = await Admin.create({ name, email, password: pwd });
       req.session.admin_id = admin._id;
       res.locals.admin = true;
+      req.session.adminName = admin.name;
       // await transporter.sendMail({
       //   to: email,
       //   from: 'project-elbrus-hedgehogs@mail.ru',

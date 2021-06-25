@@ -94,6 +94,8 @@ body {
   font-family: RF Rostin;
   font-style: normal;
   text-decoration: none;
+
+  box-shadow: 0px 7px 29px rgba(221, 131, 14, 0.34);
 }
 
 .footer {
@@ -184,7 +186,8 @@ body {
   letter-spacing: 1px;
   font-weight: bold;
   font-size: 24px;
-  text-decoration: none
+  text-decoration: none;
+  margin-left: 20px;
 }
 
 #logout, #mainAdmin, #adminName {
@@ -197,8 +200,12 @@ body {
   margin-left: 20px;
 }
 
-#logout:hover, #mainAdmin:hover {
+#logout:hover, #mainAdmin:hover, #log:hover, #sign:hover, .wrapper:hover {
   color: #FFBC5B;
+}
+
+.elbrus:hover {
+  background-color:#FFBC5B;
 }
 
 /* #mainAdmin {
@@ -218,6 +225,12 @@ body {
   font-weight: bold;
   font-size: 18px;
 } */
+
+.labelColumn {
+  display: flex;
+  flex-direction: row;
+  text-align: end;
+}
 
 .top {
   font-family: RF Rostin;
@@ -290,6 +303,8 @@ label {
 
 .navbar {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   background-color: #4520AB;
   color: #66eefb;
   height: 100px;
@@ -418,10 +433,15 @@ a {
   min-width: 460px;
 }
 
-.td:hover {
+.td:hover  {
   border: 1px solid #fffdf4;
   background-color: #ffffff;
   color: #a58146;
+}
+
+.circle:hover {
+  background-color: #ffd988;
+  color: #7140f7;
 }
 
 .flex-cont {
@@ -489,7 +509,7 @@ a {
   margin-bottom: 30px;
 }
 
-.barSearch:hover, .editBtn:hover, #select:hover {
+.barSearch:hover, .editBtn:hover, #select:hover, .btnmvp:hover, .sendForm:hover {
   cursor: pointer;
   animation: pulse 1s;
   background: #ffc471;
@@ -512,7 +532,7 @@ a {
   
   outline: none;
   border: none;
-  margin-right: 10px;
+  margin-right: 20px;
   margin-bottom: 30px;
 }
 
@@ -555,7 +575,9 @@ a {
   padding-bottom: 7px;
 }
 
-.reqInfo:hover, .zayavki:hover, #adminName:hover, .card-title:hover, p:hover {
+.reqInfo:hover, .zayavki:hover, #adminName:hover, .card-title:hover, 
+p:hover, .mvp:hover,.coding:hover,.product:hover, .circle:hover, .text:hover,
+.arrow:hover, .apply:hover, .bottomtext:hover {
   cursor: default;
 }
 
@@ -607,11 +629,30 @@ a {
   margin-bottom: 30px;
 }
 
+#loadFile {
+  width: 251px;
+  height: 51px;
+  left: 172px;
+  top: 463px;
+  background: #6a43d3;
+  box-shadow: 0px 7px 29px rgba(30, 10, 145, 0.712);
+  font-family: RF Rostin;
+  font-size: 20px;
+  border-radius: 30px;
+  color: #66eefb;;
+  margin-left: 20px;
+
+  outline: none;
+  border: none;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
 .login-container {
   margin-bottom: 50px;
 }
 
-.link {
+/* .link {
   width: 300px;
   color: #4520AB 50%;
   height: 24px;
@@ -633,9 +674,9 @@ a {
   opacity: 0;
   overflow: hidden;
   position: absolute;
-  z-index: -1;
+  z-index: 3;
   overflow: hidden;
-}
+} */
 
 .label {
   width: 180px;
