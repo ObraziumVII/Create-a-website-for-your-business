@@ -217,6 +217,24 @@ span {
   font-size: 18px;
 }
 
+#mainAdmin {
+  display: flex;
+  background: #66eefb;
+  box-shadow: 0px 7px 29px #4520AB;
+  border-radius: 30px;
+  color: #4520AB;
+  font-family: RF Rostin;
+  width: 180px;
+  height: 51px;
+  left: 172px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
 .top {
   font-family: RF Rostin;
   display: flex;
@@ -521,7 +539,12 @@ label {
 .test1 {
   display: flex;
 }
-
+.editHidden {
+  visibility: hidden;
+}
+.editVisible {
+  visibility: visible;
+}
 .reqInfo {
   color: #4520AB;
   font-size: 20px;
@@ -535,4 +558,7 @@ label {
 
 .Eji {
   margin-left: 30px;
+}
+#reqCard {
+  color: black;
 }

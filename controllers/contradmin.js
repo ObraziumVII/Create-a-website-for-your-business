@@ -62,26 +62,29 @@ const adminLogin = async (req, res, next) => {
 
 const showReq = async (req, res) => {
   id = req.params.idreq;
-  console.log(id);
   const request = await Request.findOne({ _id: id });
-  console.log(request);
   res.render('admin/request', { request });
 };
-const editReq = async (req, res) => {
-  id = req.params.idreq;
-  const request = await Request.findOne({ _id: id });
-  console.log(request._id);
-  res.render('admin/editForm', { id: request._id });
-};
+// const editReq = async (req, res) => {
+//   id = req.params.idreq;
+//   const request = await Request.findOne({ _id: id });
+//   console.log(request._id);
+//   console.log('Зашел в ручку');
+//   // res.render('admin/editForm', { id: request._id });
+//   res.render('admin/editForm', { layout: false });
+// };
 const updReq = async (req, res) => {
   let request = await Request.findById(req.params.idreq);
+  const _id = req.body._id;
+  console.log('Зашел в ручку');
   try {
-    console.log(req.body);
-    request = await Request.findByIdAndUpdate(req.params.idreq, { adminComment: req.body.adminComment, status: req.body.status });
+    // console.log(req.body);
+    await Request.findByIdAndUpdate(req.params.idreq, { adminComment: req.body.adminComment, status: req.body.status });
+    request = await Request.findById(req.params.idreq);
   } catch (error) {
     console.log('не вышло');
   }
-  res.render('admin/request');
+  res.render(`admin/request`, { request });
 };
 const search = async (req, res) => {
   let { search } = req.body;
@@ -145,5 +148,5 @@ const search = async (req, res) => {
 };
 
 module.exports = {
-  adminLogin, adminSignup, showReq, editReq, updReq, search,
+  adminLogin, adminSignup, showReq, updReq, search,
 };
