@@ -94,6 +94,8 @@ span {
   font-family: RF Rostin;
   font-style: normal;
   text-decoration: none;
+
+  box-shadow: 0px 7px 29px rgba(221, 131, 14, 0.34);
 }
 
 .footer {
@@ -197,7 +199,8 @@ span {
   letter-spacing: 1px;
   font-weight: bold;
   font-size: 24px;
-  text-decoration: none
+  text-decoration: none;
+  margin-left: 20px;
 }
 
 #logout, #mainAdmin, #adminName {
@@ -210,8 +213,12 @@ span {
   margin-left: 20px;
 }
 
-#logout:hover, #mainAdmin:hover {
+#logout:hover, #mainAdmin:hover, #log:hover, #sign:hover, .wrapper:hover {
   color: #FFBC5B;
+}
+
+.elbrus:hover {
+  background-color:#FFBC5B;
 }
 
 /* #mainAdmin {
@@ -301,6 +308,8 @@ label {
 
 .navbar {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   background-color: #4520AB;
   color: #66eefb;
   height: 100px;
@@ -447,10 +456,15 @@ a {
   min-width: 460px;
 }
 
-.td:hover {
+.td:hover  {
   border: 1px solid #fffdf4;
   background-color: #ffffff;
   color: #a58146;
+}
+
+.circle:hover {
+  background-color: #ffd988;
+  color: #7140f7;
 }
 
 .flex-cont {
@@ -520,7 +534,7 @@ a {
   margin-bottom: 30px;
 }
 
-.barSearch:hover, .editBtn:hover, #select:hover {
+.barSearch:hover, .editBtn:hover, #select:hover, .btnmvp:hover, .sendForm:hover {
   cursor: pointer;
   animation: pulse 1s;
   background: #ffc471;
@@ -587,7 +601,9 @@ a {
   padding-bottom: 7px;
 }
 
-.reqInfo:hover, .zayavki:hover, #adminName:hover, .card-title:hover, p:hover {
+.reqInfo:hover, .zayavki:hover, #adminName:hover, .card-title:hover, 
+p:hover, .mvp:hover,.coding:hover,.product:hover, .circle:hover, .text:hover,
+.arrow:hover, .apply:hover, .bottomtext:hover {
   cursor: default;
 }
 
