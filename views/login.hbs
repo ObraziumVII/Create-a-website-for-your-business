@@ -2,13 +2,13 @@
 
 <div class='loginPlease'>
 <h1>Пожалуйста, войдите в систему</h1>
-<form method="post" action="/admin/login">
+<form method="post" action="/admin/login" id="login-form">
 <span class='error-message'></span>
-   <label for="login-input" class="loginInput">Введите Ваше имя администратора:</label>
-   <input id="login-input" name="name" type="text" class='input' placeholder="Имя">
+   <label for="login-input" class="loginInput">Введите Ваш email администратора:</label>
+   <input id="login-input" name="email" type="email" class='input' placeholder="email" required>
 
    <label for="pass-input" class="passInput">Введите Ваш пароль:</label>
-   <input id="pass-input" name="password" type="text" class='input' placeholder="Пароль">
+   <input id="pass-input" name="password" type="password" class='input' placeholder="Пароль" required>
 
    <input type="submit" class='barSearch' value="ВОЙТИ">
 </form>

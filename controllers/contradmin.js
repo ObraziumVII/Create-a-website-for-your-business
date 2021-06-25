@@ -38,20 +38,29 @@ const adminSignup = async (req, res, next) => {
       return res.status(409).json({ error: 'your admin secret code is wrong' });
     }
   } catch (err) {
-    err.statusCode = 500;
     return next(err);
   }
 };
 
 const adminLogin = async (req, res, next) => {
   const { email, password } = req.body;
-  const admin = await Admin.findOne({ email });
-  const validPassword = await bcrypt.compare(password, admin.password);
-  if (validPassword) {
-    req.session.admin_id = admin._id;
-    return res.status(200).end();
+  if (!password || !email) {
+    return res.status(400).end();
   }
-  return res.status(409).end();
+  try {
+    const admin = await Admin.findOne({ email });
+    if (admin) {
+      const validPassword = await bcrypt.compare(password, admin.password);
+      if (validPassword) {
+        req.session.admin_id = admin._id;
+        req.session.adminName = admin.name;
+        return res.status(200).end();
+      }
+    }
+    return res.status(409).end();
+  } catch (err) {
+    next(err);
+  }
   // const { name, password } = req.body;
   // if (!password || !name) {
   //   res.redirect('/');

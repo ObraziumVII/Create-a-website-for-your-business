@@ -43,16 +43,16 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
 
-app.use('*', (req, res, next) => {
-  const err = new Error('Page Not Found', 404);
+app.all('*', (req, res, next) => {
+  const err = new Error('Page Not Found');
+  err.status = 404;
   next(err);
 });
 
 app.use((err, req, res, next) => {
-  const { statusCode = 500 } = err;
-  if (!err.message) err.message = 'Something went wrong';
-  res.status(statusCode).render('error', { err });
-})
+  const { status = 500, message = 'Something went wrong' } = err;
+  res.status(status).render('error', { errStatus: status, errMessage: message });
+});
 
 app.listen(process.env.PORT, () => {
   console.log('Подключение прошло успешно');
