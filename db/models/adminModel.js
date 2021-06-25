@@ -12,7 +12,7 @@ const adminSchema = Schema({
   },
   password: {
     type: String,
-    minLength: [100, 'не меньше 8 символов и не больше 100'],
+    minLength: [6, 'не меньше 6 символов'],
     required: [true, 'пароль не должен пустым'],
   },
 });
