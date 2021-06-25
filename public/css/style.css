@@ -482,7 +482,27 @@ label {
   margin-bottom: 30px;
 }
 
-.barSearch:hover, .editBtn:hover {
+#select {
+  width: 177px;
+  height: 51px;
+  left: 172px;
+  top: 463px;
+  background: #FFBC5B;
+  box-shadow: 0px 7px 29px rgba(221, 131, 14, 0.74);
+  border-radius: 30px;
+  color: #4520AB;
+  font-family: RF Rostin;
+  font-size: 20px;
+  margin-top: 20px;
+
+  padding-left: 20px;
+  outline: none;
+  border: none;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.barSearch:hover, .editBtn:hover, #select:hover {
   cursor: pointer;
   animation: pulse 1s;
   background: #ffc471;
@@ -588,12 +608,10 @@ label {
   left: 172px;
   top: 463px;
   background: #6a43d3;
-  box-shadow: 0px 7px 29px #2c0d81(255, 188, 91, 0.37);
+  box-shadow: 0px 7px 29px rgba(30, 10, 145, 0.712);
   border-radius: 30px;
   color: #66eefb;;
-  text-align: justify;
   margin-top: 20px;
-  text-align: center;
   font-weight: bold;
 
   outline: none;
