@@ -414,7 +414,14 @@ a {
   outline: none;
  }
 
+.highlight {
+  height: 100%;
+  width: 100%;
+}
+
 .tr {
+  height: 100%;
+  min-width: 100%;
   border-collapse: collapse;
   background-color: #ffebce;
   color: #4e350e;
