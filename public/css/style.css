@@ -3,18 +3,20 @@ body {
   color: #fff;
   display: flex;
   flex-direction: column;
+  align-content: flex-start;
+
 }
 
 #body {
   display:flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   position: relative;
   justify-content: center;
   align-items: center;
   
-  align-content: flex-start;
-  min-height: 723px;
-}
+  /*  */
+  /* min-height: 723px; */
+ }
 
 .main {
   margin-left: 100px;
@@ -98,20 +100,21 @@ span {
 }
 
 .footer {
-  display: flex;
+  /* display: flex; */
   width: 100%;
-  height: 70px;
+  height: 90px;
   background-color: #4520ab;
   font-family: RF Rostin;
   font-weight: bold;
-  justify-content:end;
+  justify-content: center;
   align-items: center;
   text-align: center;
   margin-top: 30px;
   color: #66eefb;;
-
+  position: absolute;
   bottom: 0px;
 }
+
 .apply {
   font-family: RF Rostin;
   font-style: normal;
@@ -573,9 +576,9 @@ label {
   cursor: default;
 }
 
-.Eji {
+/* .Eji {
   margin-left: 30px;
-}
+} */
 #reqCard {
   background-color: #ffe6c3;
   border: 7px solid #4520AB;
