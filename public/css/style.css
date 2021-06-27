@@ -732,10 +732,10 @@ p:hover, .mvp:hover,.coding:hover,.product:hover, .circle:hover, .text:hover,
 
 #loadFileLabel:hover {
   cursor: pointer;
+  animation: pulse 1s;
   background-color: #f1f1f1;
   color: #6740d3;
   box-shadow: 0px 7px 29px rgba(65, 41, 202, 0.479);
-  animation: pulse 1s;
 }
 
  .btnfile {
