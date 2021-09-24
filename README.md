@@ -1,4 +1,5 @@
-# Project
+# Create-a-website-for-your-business
+
 Проект - заказ от Elbrus Bootcamp, подразумевающий в себе сайт, где каждый желающий может оставить заявку на cоздание MVP своего проекта для бизнеса и наблюдать за статусом выполнения этой заявки.
 
 ![elbrus](https://user-images.githubusercontent.com/77483722/134642686-ef15aa2e-9709-4de1-acc5-2166d832bce8.gif)
